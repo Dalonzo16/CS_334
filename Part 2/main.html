@@ -3,19 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tea Shop</title>
+    <title>Herbal Tea Co.</title>
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
     <!-- Title and Navigation Links -->
     <header>
-        <h1>Herbal Tea Shop</h1>
+        <h1>Herbal Tea Co.</h1>
         <nav>
-            <a href="#">Home</a>
-            <a href="#">Shop</a>
-            <a href="#">About</a>
+            <a href="main.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="about.html">About</a>
             <a href="#">Contact</a>
         </nav>
+        <div class="cart-icon">
+            <img src="assets/images/cart-icon.png" alt="Shopping Cart">
+            <span id="cart-count">0</span>
+        </div>
     </header>
 
     <!-- Information section with a changing background image -->
@@ -30,16 +34,22 @@
     <section class="product-list">
         <h2>Our Best Sellers</h2>
         <!-- Products -->
-        <div class="products">
+        <div class="home-products">
             <div class="product">
-                <img src="assets/images/lemon_mint_chamomile.png" alt="Lemon Mint Chamomile">
-                <h3>Lemon Mint Chamomile</h3>
+                <img src="assets/images/elderflower_rose.png" alt="Elderflower Rose">
+                <h3>Elderflower Rose</h3>
                 <p>$10.99</p>
                 <button>Add to Cart</button>
             </div>
             <div class="product">
-                <img src="assets/images/white_pomegranate.png" alt="White Pomegranate">
-                <h3>White Pomegranate</h3>
+                <img src="assets/images/ginger_lemongrass.png" alt="Ginger Lemongrass">
+                <h3>Ginger Lemongrass</h3>
+                <p>$10.99</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="assets/images/lemon_mint_chamomile.png" alt="Lemon Mint Chamomile">
+                <h3>Lemon Mint Chamomile</h3>
                 <p>$10.99</p>
                 <button>Add to Cart</button>
             </div>
@@ -50,20 +60,14 @@
                 <button>Add to Cart</button>
             </div>
             <div class="product">
-                <img src="assets/images/wildberry_melange.png" alt="Wildberry Melange">
-                <h3>Wildberry Melange</h3>
+                <img src="assets/images/raspberry_nectar.png" alt="Raspberry Nectar">
+                <h3>Raspberry Nectar</h3>
                 <p>$10.99</p>
                 <button>Add to Cart</button>
             </div>
             <div class="product">
                 <img src="assets/images/sweet_vanilla_chai.png" alt="Sweet Vanilla Chai">
                 <h3>Sweet Vanilla Chai</h3>
-                <p>$10.99</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="assets/images/earl_grey.png" alt="Earl Grey">
-                <h3>Earl Grey</h3>
                 <p>$10.99</p>
                 <button>Add to Cart</button>
             </div>
@@ -96,6 +100,5 @@
 
         <p>&copy 2025 Herbal Tea Shop. All rights reserved.</p>
     </footer>
-
 </body>
 </html>
