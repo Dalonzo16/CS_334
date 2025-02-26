@@ -1,269 +1,182 @@
+:root {
+    --black: rgb(0, 0, 0);
+    --orange: rgb(174, 103, 22);
+    --beige: rgb(220, 196, 166);
+    --white: rgb(255, 255, 255);
+    --white_transp: rgb(255, 255, 255, 0.6);
+    --grey: rgb(146, 141, 134);
+    --grey_transp: rgb(146, 141, 134, 0.6);
+
+    font-size: 16px;
+    font-family: 'Open Sans';
+}
+
 /* Universal styles for all elements */
 * {
-    margin: 0;
+    margin: 0px;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Arial', sans-serif;
 }
 
-/* Body Styles */
 body {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-    background-color: #ede3e4;
-    color: #92898a;
+    color: black;
+    background-color: white;
+}
+
+body::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--beige);
+
+}
+
+body::-webkit-scrollbar-thumb {
+    background: var(--orange);
+}
+
+main {
+    margin: 0;
+    padding: 0;
+}
+
+.background-container {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+}
+
+.background-container img {
+    width: 100vw;
+    height: auto;
+    display: block;
+}
+
+.home-overlay {
+    position: relative;
+    width: 100vw;
+    height: auto;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 }
 
-/* Header Styles */
-header {
-    background-color: #af9fa5;
-    color: black;
-    padding: 15px;
+.home-overlay-title {
+    width: 100vw;
+    background-color: var(--white);
+    padding: 50px;
     text-align: center;
+    color: var(--beige);
 }
 
-/* Navigation Links */
-nav a {
-    color: black;
-    text-decoration: none;
-    margin: 10px;
-    font-size: 18px;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-
-/* Info Section Styles */
-.info {
-    color: black;
+.home-overlay-title h1 {
+    margin: 0px;
+    padding: 0px;
+    font-size: 48px;
+    font-weight: bold;
+    color: var(--black);
     text-align: center;
     position: relative;
 }
 
-.info h2 {
-    font-size: 2.5em;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.info p {
-    font-size: 1.2em;
-    position: absolute;
-    top: 60%;
+.home-overlay-content {
+    margin-top: 20px;
+    width: fit-content;
+    text-align: left;
+    color: var(--black);
+    background-color: var(--white_transp);
+    position: relative;
     left: 50%;
     transform: translateX(-50%);
-}
-
-.info button {
-    background-color: #e7dfe8;
-    color: black;
-    padding: 10px 20px;
-    border: none;
-    font-size: 1em;
-    cursor: pointer;
-    position: absolute;
-    bottom: 75px;
-    left: 50%;
-    transform: translate(-50%);
-}
-
-.info button:hover {
-    background-color: #c4b3c2;
-}
-
-/* Product List Section */
-.product-list {
-    padding: 40px;
-    text-align: center;
-    color: black;
-}
-
-.products {
-    display: grid;
-    gap: 20px;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-/* Media Queries */
-@media (max-width:900px) {
-    .products {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width:600px) {
-    .products {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
-
-/* Individual Product Card Styles */
-.product {
-    background: white;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    text-align: center;
-    width: 200px;
-}
-
-.product img {
-    max-width: 100%;
-    border-radius: 8px;
-}
-
-.product h3 {
-    margin: 10px 0;
-}
-
-.product p {
-    font-size: 1.1em;
-    font-weight: bold;
-    color: #4a7c59;
-}
-
-.product button {
-    background-color: #4a7c59;
-    color: white;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.product button:hover {
-    background-color: #2c5f3d;
-}
-
-/* Footer Styles */
-.footer {
-    background-color: #92898a;
-    color: white;
-    text-align: center;
     padding: 20px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    border-radius: 5px
 }
 
-.footer-content p {
-    margin: 10px 0;
+/* Sidebar Styling */
+.sidebar {
+    width: 5rem; /* Sidebar width */
+    height: auto;
+    position: fixed;
+    background-color: var(--white_transp);
+    margin-top: 10rem;
+    z-index: 1;
+    transition: width 200ms ease;
 }
 
-body {
+.sidebar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-}
-
-footer {
-    margin-top: auto;
-}
-
-/* Social Media Links */
-.social-links a {
-    color: black;
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 16px;
-}
-
-.important-links a {
-    color: black;
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 16px;
-}
-
-.contact-info p {
-    color: black;
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 16px;
-}
-
-.social-links a:hover {
-    text-decoration: underline;
-}
-
-.important-links a:hover {
-    text-decoration: underline;
-}
-
-/* Login Styling */
-.login-section {
-    background: url('../images/flower_background.png') no-repeat center center/cover;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    background-size: cover;
-    background-position: center;
 }
 
-.login-box { 
-    background-color: #c5b8b1;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 320px;
-    text-align: center;
-    color: black;
-}
-
-.login-box h2 {
-    margin-bottom: 20px;
-    font-size: 1.5em;
-    color: black;
-}
-
-/* Input and Button Styling */
-.login-box input {
-    width: 85%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #92898a;
-    border-radius: 5px;
-    font-size: 1em;
-}
-
-.login-box button {
-    width: 30%;
-    padding: 10px;
-    background-color: #897b80;
-    color: black;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1em;
-    cursor: pointer;
-    margin-top: 15px;
-}
-
-.login-box button:hover {
-    background-color: #92898a;
-}
-
-/* Slideshow Container Styles */
-.slideshow-container {
-    text-align: center;
-    margin: 20px auto;
-    position: relative;
-}
-
-#slideshow {
+.sidebar-item {
+    margin: 5px;
     width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 10px;
 }
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: var(--black);
+    text-decoration: none;
+    filter: grayscale(0%) opacity(1);
+    transition: 300ms;
+}
+
+.sidebar-link:hover {
+    filter: grayscale(100%) opacity(0.7);
+    background: var(--grey_transp);
+}
+
+.link-text {
+    display: none;
+    text-align: right;
+}
+
+.sidebar-link svg {
+    min-width: 2rem;
+    max-width: 4rem;
+    min-width: 2rem;
+    max-height: 4rem;
+    margin: 1rem 1rem;
+}
+
+/* When Sidebar is hovered over */
+.sidebar:hover {
+    width: 12rem; /* Sidebar slides in */
+}
+
+.sidebar:hover .link-text{
+    display: block;
+}
+
+/* Toggle Button */
+/* .toggle-btn {
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 60px;
+    height: 60px;
+    background: var(--white);
+    color: var(--black);
+    border: none;
+    font-size: 40px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 1;
+} */
+
+/* .toggle-btn:hover {
+    background: var(--grey);
+} */
