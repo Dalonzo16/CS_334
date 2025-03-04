@@ -88,7 +88,7 @@ main {
 
 .home-overlay-content {
     margin-top: 20px;
-    width: fit-content;
+    width: 60vw;
     text-align: left;
     color: var(--black);
     background-color: var(--white_transp);
@@ -155,6 +155,7 @@ main {
 /* When Sidebar is hovered over */
 .sidebar:hover {
     width: 12rem; /* Sidebar slides in */
+    background-color: var(--white);
 }
 
 .sidebar:hover .link-text{
