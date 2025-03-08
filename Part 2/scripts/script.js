@@ -28,3 +28,14 @@ function nextImage() {
 
 // Starting the slideshow when the page loads
 window.onload = nextImage();
+
+// Management Pages
+function showSection(sectionId) {
+    // Hide all sections
+    document.querySelectorAll('.management-section').forEach(section => {
+        section.classList.remove('active');
+    });
+
+    // Show selected section
+    document.getElementById(sectionId).classList.add('active');
+}

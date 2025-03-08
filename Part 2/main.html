@@ -17,10 +17,10 @@
             <a href="about.html">About</a>
             <a href="contact.html">Contact</a>
         </nav>
-        <div class="cart-icon">
+        <a href="checkout.html" class="cart-icon">
             <img src="assets/images/cart-icon2.png" alt="Shopping Cart">
             <span id="cart-count">0</span>
-        </div>
+        </a>
     </header>
 
     <!-- Information section with a changing background image -->
@@ -28,7 +28,7 @@
         <img id="info-image" alt="Herbal Tea Background" style="width: 100%; object-fit:cover;">
         <h2>Discover the Best Herbal Teas</h2>
         <p>Freshly sourced, organic, and full of flavor.</p>
-        <button>Shop Now</button>
+        <button onClick="window.location.href='shop.html'">Shop Now</button>
     </section>
 
     <!-- Section displaying best-selling products -->
@@ -38,38 +38,42 @@
         <div class="home-products">
             <div class="product">
                 <img src="assets/images/elderflower_rose.png" alt="Elderflower Rose">
+                <p class="type">Herbal Tea</p>
                 <h3>Elderflower Rose</h3>
-                <p>$10.99</p>
+                <p>$9.99</p>
+                <p class="description">A fragrant floral blend with delicate elderflower and sweet rose notes</p>
                 <button>Add to Cart</button>
             </div>
             <div class="product">
                 <img src="assets/images/ginger_lemongrass.png" alt="Ginger Lemongrass">
+                <p class="type">Herbal Tea</p>
                 <h3>Ginger Lemongrass</h3>
-                <p>$10.99</p>
+                <p>$9.99</p>
+                <p class="description">The spicy warmth of ginger paired with the fresh, citrusy flavor of lemongrass</p>
                 <button>Add to Cart</button>
             </div>
             <div class="product">
                 <img src="assets/images/lemon_mint_chamomile.png" alt="Lemon Mint Chamomile">
+                <p class="type">Herbal Tea</p>
                 <h3>Lemon Mint Chamomile</h3>
-                <p>$10.99</p>
-                <button>Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="assets/images/raspberry_hibiscus.png" alt="Raspberry Hibiscus">
-                <h3>Raspberry Hibiscus</h3>
-                <p>$10.99</p>
+                <p>$9.99</p>
+                <p class="description">A soothing herbal blend that combines calming chamomile with refreshing mint and citrusy lemon.</p>
                 <button>Add to Cart</button>
             </div>
             <div class="product">
                 <img src="assets/images/raspberry_nectar.png" alt="Raspberry Nectar">
-                <h3>Raspberry Nectar</h3>
-                <p>$10.99</p>
-                <button>Add to Cart</button>
+                    <p class="type">Herbal Tea</p>
+                    <h3>Raspberry Nectar</h3>
+                    <p>$9.99</p>
+                    <p class="description">A vibrant, fruity tea with the sweet and tart flavor of ripe raspberries</p>
+                    <button>Add to Cart</button>
             </div>
             <div class="product">
                 <img src="assets/images/sweet_vanilla_chai.png" alt="Sweet Vanilla Chai">
+                <p class="type">Black Tea</p>
                 <h3>Sweet Vanilla Chai</h3>
                 <p>$10.99</p>
+                <p class="description">A sweet and creamy black tea with cinnamon, cardamom, and vanilla</p>
                 <button>Add to Cart</button>
             </div>
         </div>
@@ -81,12 +85,6 @@
     <!-- Footer section with social media links, contact information, and legal links -->
     <footer>
         <div class="footer-content">
-            <div class="social-links">
-                <a href="#">Facebook</a> |
-                <a href="#">Instragram</a> |
-                <a href="#">Twitter</a>
-            </div>
-
             <div class="contact-info">
                 <p>Email: support@herbalteashop.com</p>
                 <p>Phone: 1-800-592-0371</p>
