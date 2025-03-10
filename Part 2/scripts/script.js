@@ -1,8 +1,6 @@
 // Array of image file paths for the slideshow
 let images = [
-    "assets/images/main_background.png",
     "assets/images/tea_background1.png",
-    "assets/images/tea_background2.png",
     "assets/images/tea_background3.png",
     "assets/images/tea_background4.png"
 ];
@@ -30,3 +28,14 @@ function nextImage() {
 
 // Starting the slideshow when the page loads
 window.onload = nextImage();
+
+// Management Pages
+function showSection(sectionId) {
+    // Hide all sections
+    document.querySelectorAll('.management-section').forEach(section => {
+        section.classList.remove('active');
+    });
+
+    // Show selected section
+    document.getElementById(sectionId).classList.add('active');
+}
