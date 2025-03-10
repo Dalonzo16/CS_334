@@ -397,7 +397,8 @@ footer {
     background-position: center;
     background-repeat: no-repeat;
     color: var(--color_black);
-    padding-left: 50px;
+    padding-left:35px;
+    padding-right: 35px;
 }
 
 .about-section h2 {
