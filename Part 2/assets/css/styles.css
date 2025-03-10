@@ -95,6 +95,7 @@ button {
     border: none;
     font-size: 1em;
     cursor: pointer;
+    transition: background-color 0.1s ease;
 }
 
 button:hover {
@@ -167,10 +168,6 @@ button:hover {
     width: 80%;
     max-width: 150px;
     align-self: center;
-}
-
-.product button:hover {
-    background-color: var(--color_dark_grey);
 }
 
 /* Footer Styles */
@@ -255,13 +252,7 @@ footer {
     width: 50%;
     padding: 10px;
     background-color: #3b6247;
-    color: var(--color_white);
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1em;
-    cursor: pointer;
     margin-top: 15px;
-    transition: background-color 0.3s;
 }
 
 .login-box button:hover {
@@ -526,11 +517,7 @@ footer {
 .contact-form button {
     margin-top: 15px;
     padding: 10px;
-    color: var(--color_white);
-    border: none;
-    cursor: pointer;
     font-size: 16px;
-    border-radius: 5px;
 }
 
 /* Checkout Page Styling */
@@ -653,19 +640,12 @@ footer {
     width: fit-content;
     max-width: 400px;
     padding: 12px;
-    background-color: var(--color_dark_grey);
-    color: var(--color_white);
-    border: none;
-    cursor: pointer;
-    font-size: 1.1em;
-    border-radius: 5px;
-    transition: background-color 0.3s;
 }
 
 /* Management Page Styling */
 .sidebar {
     width: 250px;
-    background-color: var(--color_dark_grey);
+    background-color: var(--color_black);
     color: var(--color_white);
     padding: 20px;
     display: flex;
@@ -685,13 +665,15 @@ footer {
     display: block;
     text-decoration: none;
     color: var(--color_white);
+    border: 1px solid transparent;
+    border-radius: 5px;
     padding: 10px;
     border-radius: 5px;
-    background: var(--color_dark_grey);
+    background: var(--color_black);
 }
 
 .sidebar a:hover {
-    color: var(--color_grey);
+    border: 1px solid var(--color_white) ;
 }
 
 .sidebar ul {
@@ -731,60 +713,14 @@ table th, table td {
     text-align: left;
 }
 
-.edit-btn, .delete-btn {
-    padding: 5px 10px;
-    border: none;
-    cursor: pointer;
-}
-
-.edit-btn {
-    background: var(--color_black);
-    color: var(--color_white);
-}
-
-.delete-btn {
-    background: var(--color_black);
-    color: var(--color_white);
-}
-
 .product-list ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
-.product-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px;
-    margin-bottom: 15px;
-    background-color: var(--color_white);
-    border-radius: 8px;
-    box-shadow: 0 2px 4px var(--color_black_transp);
-}
-
-.product-item span {
-    font-size: 1.1em;
-}
-
-.product-item button {
-    padding: 8px 12px;
-    background-color: var(--color_dark_grey);
-    color: var(--color_black);
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
 .product-list button {
     padding: 8px 12px;
-    background-color: var(--color_black);
-    color: var(--color_white);
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
     margin-left: 10px;
 }
 
@@ -807,7 +743,6 @@ table th, table td {
     color: var(--color_black);
 }
 
-
 .add-product input, .add-product textarea {
     width: 100%;
     max-width: 300px;
@@ -821,12 +756,5 @@ table th, table td {
 .add-product button {
     width: fit-content;
     padding: 12px 20px;
-    background-color: var(--color_black);
-    color: var(--color_white);
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-    font-size: 1.1em;
-    transition: background-color 0.3s ease;
     align-self: center;
 }
