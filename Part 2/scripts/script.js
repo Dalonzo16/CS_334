@@ -23,7 +23,7 @@ function nextImage() {
     }
 
     // Setting a timeout to call the nextImage function again after 10 seconds
-    setTimeout(nextImage, 10000);
+    setTimeout(nextImage, 6000);
 }
 
 // Starting the slideshow when the page loads
