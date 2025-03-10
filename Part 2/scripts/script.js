@@ -1,7 +1,7 @@
 // Array of image file paths for the slideshow
 let images = [
-    "assets/images/tea_background1.png",
     "assets/images/tea_background3.png",
+    "assets/images/tea_background1.png",
     "assets/images/tea_background4.png"
 ];
 
