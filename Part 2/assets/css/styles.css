@@ -43,7 +43,7 @@ header nav {
     background-color: var(--color_black);
     padding-top: 30px;
     padding-bottom: 15px;
-    width: 100vw;
+    width: 100%;
     z-index: 2;
 }
 
