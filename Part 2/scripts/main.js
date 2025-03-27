@@ -75,7 +75,7 @@ function clearCart() {
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
 
-
+updateCartCount()
 // Export store functions to be used in other scripts
 window.appStore = {
     store,

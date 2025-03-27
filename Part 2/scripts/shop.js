@@ -57,11 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
             alert("Item is already in the cart.");
         }
     }
-    
-    // Update cart count from storage
-    function updateCartCount() {
-        cartCount.textContent = appStore.store.cart.length;
-    }
 
     updateCartCount();
 });
