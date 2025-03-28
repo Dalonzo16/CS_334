@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const productId = document.querySelector("#product-id").value;
         const newProduct = {
             name: document.querySelector("#product-name").value,
-            category: document.querySelector("#product-category").value,
+            category: document.querySelector("#product-category").value+" tea",
             price: document.querySelector("#product-price").value,
             description: document.querySelector("#product-description").value,
             image: document.querySelector("#product-image").value,
