@@ -2,15 +2,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const productGrid = document.querySelector(".shop-products");
     const cartCount = document.getElementById("cart-count");
 
-    // Fetch CSV file and process data
-    fetch("assets/data/products.csv") //WILL BE SWAPPED WITH DATABASE
-        .then(response => response.text())
-        .then(data => {
-            const products = parseCSV(data);
-            displayProducts(products);
-        })
-        .catch(error => console.error("Error loading products:", error));
-
+   // Fetch products from Flask API
+   fetch("http://127.0.0.1:5000/api/products")
+   .then(response => {
+       if (!response.ok) {
+           throw new Error("Failed to load products");
+       }
+       return response.json();
+   })
+   .then(products => displayProducts(products))
+   .catch(error => console.error("Error loading products:", error));
+   
     // Parse CSV text into an array of objects
     function parseCSV(data) {
         const lines = data.split("\n").slice(1); // Skip the header row
