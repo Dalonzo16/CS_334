@@ -1,7 +1,7 @@
 // Array of image file paths for the slideshow
 let images = [
-    "assets/images/tea_background1.png",
     "assets/images/tea_background3.png",
+    "assets/images/tea_background1.png",
     "assets/images/tea_background4.png"
 ];
 
@@ -23,7 +23,7 @@ function nextImage() {
     }
 
     // Setting a timeout to call the nextImage function again after 10 seconds
-    setTimeout(nextImage, 10000);
+    setTimeout(nextImage, 6000);
 }
 
 // Starting the slideshow when the page loads
