@@ -1,0 +1,1 @@
+Front end: Created my layout idea and worked on the final implementation, and worked on the CSS, HTML, and JavaScript.

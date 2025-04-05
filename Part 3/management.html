@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Management | Herbal Tea Co.</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/tea_logo2.png">
+    <script src="scripts/script.js"></script>
+</head>
+<body>
+    <!-- Title and Navigation Links -->
+    <header>
+        <h1>Herbal Tea Co.</h1>
+        <nav>
+            <a href="main.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        <a href="checkout.html" class="cart-icon">
+            <img src="assets/images/cart-icon2.png" alt="Shopping Cart">
+            <span id="cart-count">0</span>
+        </a>
+    </header>
+
+    <div class="dashboard-container">
+    <aside class="sidebar">
+        <h2>Management</h2>
+        <ul>
+            <li><a href="#" onClick="showSection('manage-products')">Manage Products</a></li>
+            <li><a href="#" onClick="showSection('orders')">Orders</a></li>
+            <li><a href="#" onClick="showSection('customers')">Customers</a></li>
+            <li><a href="#" onClick="showSection('settings')">Settings</a></li>
+        </ul>
+    </aside>
+
+    <main class="management-content">
+        <section id="manage-products" class="management-section active">
+            <h2>Manage Products</h2>
+
+            <div class="product-list">
+                <h3>Product List</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Price</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>African Solstice</td>
+                            <td>$9.99</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Apricot Amarertto</td>
+                            <td>$9.99</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Berry Harvest</td>
+                            <td>$10.99</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Black Currant</td>
+                            <td>$10.99</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Bombay Chai</td>
+                            <td>$10.99</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Cape Orange Quince</td>
+                            <td>$9.99</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Caramel Almond</td>
+                            <td>$10.99</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Ceylon Gold</td>
+                            <td>$10.99</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Chamomile Citron</td>
+                            <td>$9.99</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Citrus Mint</td>
+                            <td>$9.99</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Darjeeling Quince</td>
+                            <td>$10.99</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Earl Grey</td>
+                            <td>$10.99</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Echinacea Ginger Elderberry</td>
+                            <td>$8.99</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Elderflower Rose</td>
+                            <td>$9.99</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Estate Darjeeling</td>
+                            <td>$10.99</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Floral Rooibos</td>
+                            <td>$9.99</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Genmaicha</td>
+                            <td>$8.99</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Ginger Lemongrass</td>
+                            <td>$9.99</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Green Pomegranate</td>
+                            <td>$9.99</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Green Sweet Jasmine</td>
+                            <td>$8.99</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Harvest Apple Spice</td>
+                            <td>$9.99</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Hibiscus Blossom</td>
+                            <td>$9.99</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Iced Blue Mint Nectar</td>
+                            <td>$9.99</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Iced Green Mango Peach</td>
+                            <td>$8.99</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Lemon Lavender</td>
+                            <td>$9.99</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Lemon Mint Chamomile</td>
+                            <td>$9.99</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Mango Citron</td>
+                            <td>$9.99</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Peach Blossom</td>
+                            <td>$12.99</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Pomegranate Vanilla</td>
+                            <td>$9.99</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Raspberry Nectar</td>
+                            <td>$9.99</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Sweet Vanilla Chai</td>
+                            <td>$10.99</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Turmeric Lemon</td>
+                            <td>$9.99</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>White Silver Needle</td>
+                            <td>$12.99</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>White Vanilla Apple</td>
+                            <td>$12.99</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Winter Chai</td>
+                            <td>$9.99</td>
+                            <td>
+                                <button class="edit-btn">Edit</button>
+                                <button class="delete-btn">Delete</button>
+                            </td>
+                        </tr>
+
+                    
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="add-product">
+                <h3>Add New Product</h3>
+                <form>
+                    <label for="product-name">Product Name</label>
+                    <input type="text" id="product-name" name="product-name" required>
+    
+                    <label for="product-price">Price</label>
+                    <input type="number" id="product-price" name="product-price" required>
+    
+                    <label for="product-description">Description</label>
+                    <textarea id="product-description" name="product-description" required></textarea>
+    
+                    <button type="submit">Add Product</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="orders" class="management-section">
+            <h2>Orders</h2>
+            <p>Order management will go here...</p>
+        </section>
+
+        <section id="customers" class="management-section">
+            <h2>Customers</h2>
+            <p>Customer data will be displayed here...</p>
+        </section>
+
+        <section id="settings" class="management-section">
+            <h2>Settings</h2>
+            <p>Account and store settings will go here...</p>
+        </section>
+    </main>
+</div>
+    <footer>
+        <p>&copy 2025 Herbal Tea Shop. All rights reserved.</p>
+    </footer>
+</body>
+</html>
