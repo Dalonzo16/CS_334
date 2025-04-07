@@ -759,3 +759,8 @@ table th, table td {
     padding: 12px 20px;
     align-self: center;
 }
+
+.product-list img {
+    width: 150px;
+    object-fit: contain;
+}
