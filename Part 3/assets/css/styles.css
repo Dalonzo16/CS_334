@@ -764,3 +764,69 @@ table th, table td {
     width: 150px;
     object-fit: contain;
 }
+
+
+/* Popup Functionality
+.cart-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    border: 2px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    padding: 1.5rem;
+    z-index: 1000;
+    display: none;
+    max-width: 400px;
+    width: 90%;
+    border-radius: 10px;
+}
+
+.cart-popup-content {
+    position: relative;
+}
+
+.cart-popup .close-popup {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.cart-popup .popup-product-info {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.cart-popup .popup-product-info img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.cart-popup .popup-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.cart-popup button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background: black;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cart-popup button:hover {
+    background-color: lightgray;
+}
+
+.hidden {
+    display: none;
+}  */

@@ -6,6 +6,8 @@
     <title>Shop - Herbal Tea Co.</title>
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="icon" type="image/x-icon" href="assets/images/tea_logo2.png">
+    <script src="scripts/cart.js"></script>
+    <script src="scripts/shop.js"></script>
 </head>
 <body>
     <header>
@@ -31,10 +33,10 @@
                 <label for="category">Category:</label>
                 <select id="category">
                     <option value="all">All</option>
-                    <option value="black">Black Tea</option>
-                    <option value="green">Green Tea</option>
-                    <option value="herbal">Herbal Tea</option>
-                    <option value="white">White Tea</option>
+                    <option value="black tea">Black Tea</option>
+                    <option value="green tea">Green Tea</option>
+                    <option value="herbal tea">Herbal Tea</option>
+                    <option value="white tea">White Tea</option>
                 </select>
             </div>
 
@@ -47,8 +49,6 @@
                     <option value="high">Over $20</option>
                 </select>
             </div>
-
-            <button id="apply-filters">Apply Filters</button>
         </aside>
 
         <section class="product-grid">
@@ -69,7 +69,28 @@
         </div>
         <p>&copy 2025 Herbal Tea Shop. All rights reserved.</p>
     </footer>
+
+    <!-- Popup for Cart Confirmation -->
+    <!-- <div id="cart-popup" class="cart-popup hidden">
+        <div class="cart-popup-content">
+            <span class="close-popup">&times;</span>
+            <h3>Item Added</h3>
+            <div class="popup-product-info">
+                <img id="popup-image" src="" alt="Tea Image">
+                <div class="popup-details">
+                    <p id="popup-name"></p>
+                    <p id="popup-quantity"></p>
+                    <p id="popup-price"></p>
+                </div>
+            </div>
+            <div class="popup-buttons">
+                <button id="continue-shopping">Continue Shopping</button>
+                <button id="go-to-checkout">Proceed to Checkout</button>
+            </div>
+        </div>
+     </div> -->
     <script src="scripts/indexedDB.js"></script>
-    <script src="scripts/shop.js"></script>
+    <!-- <script src="scripts/cart.js"></script> -->
+    <!-- <script src="scripts/shop.js"></script> -->
 </body>
 </html>
