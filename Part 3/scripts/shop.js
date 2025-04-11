@@ -24,6 +24,9 @@ async function displayProducts() {
         //load products 'await' key word must be used here
         let products = await load_products();
 
+        // Debugging
+        console.log(products);
+
         // Filter products by selected category and price
         products = products.filter(product => {
             // ignore malformed products
@@ -31,7 +34,7 @@ async function displayProducts() {
                 return false;
 
             // Match selected category (or "all")
-            const matchesCategory = selectedCategory === "all" || product.category === selectedCategory;
+            const matchesCategory = selectedCategory === "all" || product.category.toLowerCase() === selectedCategory.toLowerCase();
 
             // Match selected price range
             let matchesPrice = true;
@@ -57,7 +60,7 @@ async function displayProducts() {
             const productHTML = `
                 <div class="product">
                     <img src="${"assets/images/"+product.image}" alt="${product.name}">
-                    <p class="type">${product.category} Tea</p>
+                    <p class="type">${product.category}</p>
                     <h3>${product.name}</h3>
                     <p>$${product.price}</p>
                     <p class="description">${product.description}</p>

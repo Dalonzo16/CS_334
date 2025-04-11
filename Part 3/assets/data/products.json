@@ -2,7 +2,7 @@
     {
         "id": "1",
         "name": "African Solstice",
-        "category": "herbal tea",
+        "category": "Herbal Tea",
         "price": "9.99",
         "description": "A vibrant blend of African rooibos and exotic fruits",
         "image": "african_solstice.png"
@@ -10,7 +10,7 @@
     {
         "id": "2",
         "name": "Apricot Amaretto",
-        "category": "herbal tea",
+        "category": "Herbal Tea",
         "price": "9.99",
         "description": "The warm, nutty essence of amaretto paired with ripe apricot",
         "image": "apricot_amaretto.png"
@@ -18,7 +18,7 @@
     {
         "id": "3",
         "name": "Berry Harvest",
-        "category": "black tea",
+        "category": "Black Tea",
         "price": "10.99",
         "description": "A rich black tea blended with sweet and tart berries for a balanced flavor",
         "image": "berry_harvest.png"
@@ -26,7 +26,7 @@
     {
         "id": "4",
         "name": "Black Currant",
-        "category": "black tea",
+        "category": "Black Tea",
         "price": "10.99",
         "description": "Deep and jammy, this tea brings the essence of ripe black currants into a bold black tea base",
         "image": "black_currant.png"
@@ -34,7 +34,7 @@
     {
         "id": "5",
         "name": "Bombay Chai",
-        "category": "black tea",
+        "category": "Black Tea",
         "price": "10.99",
         "description": "A classic chai blend with robust black tea, warming spices, and a hint of sweetness",
         "image": "bombay_chai.png"
@@ -42,7 +42,7 @@
     {
         "id": "6",
         "name": "Cape Orange Quince",
-        "category": "herbal tea",
+        "category": "Herbal Tea",
         "price": "9.99",
         "description": "A unique combination of bright citrus and mellow quince, delivering a refreshing and lightly tangy flavor",
         "image": "cape_orange_quince.png"
@@ -50,7 +50,7 @@
     {
         "id": "7",
         "name": "Caramel Almond",
-        "category": "black tea",
+        "category": "Black Tea",
         "price": "10.99",
         "description": "Sweet caramel and toasted almond create a decadent, dessert-like blck tea",
         "image": "caramel_almond.png"
@@ -58,7 +58,7 @@
     {
         "id": "8",
         "name": "Ceylon Gold",
-        "category": "black tea",
+        "category": "Black Tea",
         "price": "10.99",
         "description": "A bold and smooth black tea with bright citrus notes and a naturally brisk finish",
         "image": "ceylon_gold.png"
@@ -66,7 +66,7 @@
     {
         "id": "9",
         "name": "Chamomile Citron",
-        "category": "herbal tea",
+        "category": "Herbal Tea",
         "price": "9.99",
         "description": "A calming blend of chamomile, lemongrass, and subtle cirtus notes",
         "image": "chamomile_citron.png"
@@ -74,7 +74,7 @@
     {
         "id": "10",
         "name": "Citrus Mint",
-        "category": "herbal tea",
+        "category": "Herbal Tea",
         "price": "9.99",
         "description": "A vibrant mix of cool mint and zesty citrus",
         "image": "citrus_mint.png"
@@ -82,7 +82,7 @@
     {
         "id": "11",
         "name": "Darjeeling Quince",
-        "category": "black tea",
+        "category": "Black Tea",
         "price": "10.99",
         "description": "The floral notes of Darjeeling tea meet the unique tartness of quince fruit",
         "image": "darjeeling_quince.png"
@@ -90,7 +90,7 @@
     {
         "id": "12",
         "name": "Earl Grey",
-        "category": "black tea",
+        "category": "Black Tea",
         "price": "10.99",
         "description": "A timeless blend of fine black tea infused with fragrant bergamot oil",
         "image": "earl_grey.png"
@@ -98,7 +98,7 @@
     {
         "id": "13",
         "name": "Echinacea, Ginger & Elderberry",
-        "category": "green tea",
+        "category": "Green Tea",
         "price": "8.99",
         "description": "A powerhouse of immune-boosting ingredients with a slightly spicy, berry-forward flavor",
         "image": "echinacea_ginger_elderberry.png"
@@ -106,7 +106,7 @@
     {
         "id": "14",
         "name": "Elderflower Rose",
-        "category": "herbal tea",
+        "category": "Herbal Tea",
         "price": "9.99",
         "description": "A fragrant floral blend with delicate elderflower and sweet rose notes",
         "image": "elderflower_rose.png"
@@ -114,7 +114,7 @@
     {
         "id": "15",
         "name": "Estate Darjeeling",
-        "category": "black tea",
+        "category": "Black Tea",
         "price": "10.99",
         "description": "A light, aromatic tea has a delicate muscatel flavor and floral notes",
         "image": "estate_darjeeling.png"
@@ -122,7 +122,7 @@
     {
         "id": "16",
         "name": "Floral Rooibos",
-        "category": "herbal tea",
+        "category": "Herbal Tea",
         "price": "9.99",
         "description": "A smooth, naturally sweet rooibos tea infused with fragrant floral undertones",
         "image": "floral_rooibos.png"
@@ -130,7 +130,7 @@
     {
         "id": "17",
         "name": "Genmaicha",
-        "category": "green tea",
+        "category": "Green Tea",
         "price": "8.99",
         "description": "A traditional Japanese blend of green tea and toasted rice, offering a nutty and savory profile.",
         "image": "genmaicha.png"
@@ -138,7 +138,7 @@
     {
         "id": "18",
         "name": "Ginger Lemongrass",
-        "category": "herbal tea",
+        "category": "Herbal Tea",
         "price": "9.99",
         "description": "The spicy warmth of ginger paired with the fresh, citrusy flavor of lemongrass",
         "image": "ginger_lemongrass.png"
@@ -146,7 +146,7 @@
     {
         "id": "19",
         "name": "Green Pomegranate",
-        "category": "herbal tea",
+        "category": "Herbal Tea",
         "price": "9.99",
         "description": "A bright and refreshing green tea with the tartness of pomegranate",
         "image": "green_pomegranate.png"
@@ -154,7 +154,7 @@
     {
         "id": "20",
         "name": "Green Sweet Jasmine",
-        "category": "green tea",
+        "category": "Green Tea",
         "price": "8.99",
         "description": "Floral and decadent, this tea combines smooth chocolate with delicate rose petals",
         "image": "green_sweet_jasmine.png"
@@ -162,7 +162,7 @@
     {
         "id": "21",
         "name": "Harvest Apple Spice",
-        "category": "herbal tea",
+        "category": "Herbal Tea",
         "price": "9.99",
         "description": "A cozy herbal blend of sweet apples, warm cinnamon, and a touch of clove",
         "image": "harvest_apple_spice.png"
@@ -170,7 +170,7 @@
     {
         "id": "22",
         "name": "Hibiscus Blossom",
-        "category": "herbal tea",
+        "category": "Herbal Tea",
         "price": "9.99",
         "description": "A tangy, vibrant herbal tea with the bright, floral notes of hibiscus",
         "image": "hibiscus_blossom.png"
@@ -178,7 +178,7 @@
     {
         "id": "23",
         "name": "Iced Blue Mint Nectar",
-        "category": "herbal tea",
+        "category": "Herbal Tea",
         "price": "9.99",
         "description": "A cooling blend of mint with a refreshing hint of blue tea flowers",
         "image": "iced_blue_mint_nectar.png"
@@ -186,7 +186,7 @@
     {
         "id": "24",
         "name": "Iced Green Mango Peach",
-        "category": "green tea",
+        "category": "Green Tea",
         "price": "8.99",
         "description": "A fruity, chilled herbal tea with bold blueberry flavor and a touch of wine-like richness",
         "image": "iced_green_mango_peach.png"
@@ -194,7 +194,7 @@
     {
         "id": "25",
         "name": "Lemon Lavender",
-        "category": "herbal tea",
+        "category": "Herbal Tea",
         "price": "9.99",
         "description": "A calming blend of lemon and lavender",
         "image": "lemon_lavender.png"
@@ -202,7 +202,7 @@
     {
         "id": "26",
         "name": "Lemon Mint Chamomile",
-        "category": "herbal tea",
+        "category": "Herbal Tea",
         "price": "9.99",
         "description": "A soothing herbal blend that combines calming chamomile with refreshing mint and citrusy lemon.",
         "image": "lemon_mint_chamomile.png"
@@ -210,7 +210,7 @@
     {
         "id": "27",
         "name": "Mango Citron",
-        "category": "herbal tea",
+        "category": "Herbal Tea",
         "price": "9.99",
         "description": "A lovely blend of tropical mango and citrus",
         "image": "mango_citron.png"
@@ -218,7 +218,7 @@
     {
         "id": "28",
         "name": "Peach Blossom",
-        "category": "white tea",
+        "category": "White Tea",
         "price": "12.99",
         "description": "A soft, floral peach tea with a naturally sweet finish",
         "image": "peach_blossom.png"
@@ -226,7 +226,7 @@
     {
         "id": "29",
         "name": "Pomegranate Vanilla",
-        "category": "herbal tea",
+        "category": "Herbal Tea",
         "price": "9.99",
         "description": "A smooth blend of tangy pomegranate and creamy vanilla",
         "image": "pomegranate_vanilla.png"
@@ -234,7 +234,7 @@
     {
         "id": "30",
         "name": "Raspberry Nectar",
-        "category": "herbal tea",
+        "category": "Herbal Tea",
         "price": "9.99",
         "description": "A vibrant, fruity tea with the sweet and tart flavor of ripe raspberries",
         "image": "raspberry_nectar.png"
@@ -242,7 +242,7 @@
     {
         "id": "31",
         "name": "Sweet Vanilla Chai",
-        "category": "black tea",
+        "category": "Black Tea",
         "price": "10.99",
         "description": "A sweet and creamy black tea with cinnamon, cardamom, and vanilla",
         "image": "sweet_vanilla_chai.png"
@@ -250,7 +250,7 @@
     {
         "id": "32",
         "name": "Turmeric Lemon",
-        "category": "herbal tea",
+        "category": "Herbal Tea",
         "price": "9.99",
         "description": "A zesty blend of turmeric and lemon, offering a bright and invigorating flavor",
         "image": "tumeric_lemon.png"
@@ -258,7 +258,7 @@
     {
         "id": "33",
         "name": "White Silver Needle",
-        "category": "white tea",
+        "category": "White Tea",
         "price": "12.99",
         "description": "A permium white tea with a gentle, sweet taste and a floral aroma",
         "image": "white_silver_needle.png"
@@ -266,7 +266,7 @@
     {
         "id": "34",
         "name": "White Vanilla Apple",
-        "category": "white tea",
+        "category": "White Tea",
         "price": "12.99",
         "description": "The perfect mix of creamy vanilla and crisp apple",
         "image": "white_vanilla_apple.png"
@@ -274,7 +274,7 @@
     {
         "id": "35",
         "name": "Winter Chai",
-        "category": "herbal tea",
+        "category": "Herbal Tea",
         "price": "9.99",
         "description": "A warming blend of bold spices, including cinnamon, ginger, and cloves, with a hint of sweetness",
         "image": "winter_chai.png"
