@@ -8,10 +8,10 @@ dbReq.onupgradeneeded = function(event) {
   // Set the db variable to our database so we can use it 
   db = event.target.result;
 
-
   //create an object store named 'products' that uses "id" attribute as the key
   db.createObjectStore('products', {keyPath: "id"});
-  
+  // create user object store with userName attribute as key
+  db.createObjectStore('users', {keyPath: "userName"})
 }
 
 //if DB is opened successfully then initialize the db variable and populate the DB
@@ -24,38 +24,38 @@ dbReq.onsuccess = function(event) {
 async function populateDB(){
 
     //check if the object store 'products' is empty
-    const empty = await isEmpty('products');
+    const productsEmpty = await isEmpty('products');
+    const usersEmpty = await isEmpty('users')
 
-    if(!empty){
+    if(!productsEmpty && !usersEmpty){
 
         //if its not then display this message and do nothing
-        console.log("This object store is not empty");
+        console.log("This object stores are not empty");
         return;
     }
+    //if it is empty then fetch the JSON file and populate the 'products' object store
+    fetch('assets/data/initial.json')
+    .then((response) => response.json())
+    .then((products) => {
 
-    else{
+        let tx = db.transaction(['products', 'users'], 'readwrite');
+        let productStore = tx.objectStore('products');
+        let userStore = tx.objectStore('users');
 
-        //if it is empty then fetch the JSON file and populate the 'products' object store
-         fetch('assets/data/products.json')
-            .then((response) => response.json())
-            .then((products) => {
-
-                let tx = db.transaction('products', 'readwrite');
-                let store = tx.objectStore('products');
-
-                products.forEach(product => {
-                    store.add(product);
-                })
-
-                tx.oncomplete = function() { console.log('stored products!') }
-
-                tx.onerror = function(event) {
-                    alert('error storing products ' + event.target.errorCode);
-                }
-
-            });
-
+        // ensure that object store need to be populated, and JSON data exists and is an array
+        if (productsEmpty && Array.isArray(data.products)) {
+            data.products.forEach(product => productStore.add(product));
         }
+        // ensure that object store need to be populated, and JSON data exists and is an array
+        if (usersEmpty && Array.isArray(data.users)) {
+            data.users.forEach(user => userStore.add(user));
+        }
+
+        tx.oncomplete = function() { console.log('stored products!') }
+        tx.onerror = function(event) {
+            alert('error storing products ' + event.target.errorCode);
+        }
+    });
 }
 
 //when this method is used the keyword 'await' MUST be in front of it
@@ -164,9 +164,7 @@ function isEmpty(object_store){
         const request = store.count();
     
         //Handle successful count
-        request.onsuccess = () => {
-          resolve(request.result === 0); // Returns true if count > 0
-        };
+        request.onsuccess = () => resolve(request.result === 0) // Returns true if count > 0
         
         //Handle errors
         request.onerror = () => reject(request.error);

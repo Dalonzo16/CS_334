@@ -131,6 +131,9 @@ button:hover {
     background: var(--color_white);
     color: var(--color_black);
     padding: 15px;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    transition: border-color 0.2 ease;
     border-radius: 10px;
     text-align: center;
     display: flex;
@@ -141,7 +144,7 @@ button:hover {
 }
 
 .product:hover {
-    border: 2px solid var(--color_light_grey);
+    border-color: var(--color_light_grey);
 }
 
 .product img {
@@ -719,12 +722,19 @@ footer {
     color: var(--color_black);
 }
 
-.management-section {
-    display: none;
+#manager-product-list {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-self: center;
+    width: 70vw;
+    height: 50vw;
+    border: 2px solid var(--color_black);
+    border-radius: 10px;
+    overflow-y: auto;
 }
 
 .management-section.active {
-    display: block;
+    display: grid;
 }
 
 /* Product Table Styling */
@@ -748,19 +758,31 @@ table th, table td {
 
 .product-list button {
     padding: 8px 12px;
+    margin-top: 3px;
     margin-left: 10px;
 }
 
 /* Add Product */
+
+.add-product {
+    padding: 20px;
+    width: fit-content;
+
+}
+
 .add-product form {
+    margin-top: 20px;
     margin-bottom: 50px;
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
     background-color: var(--color_white);
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px var(--color_black_transp);
+    box-sizing: border-box;
+    border: 2px solid;
+    width: fit-content;
+    transition: border-color 0.2 ease;
+    border-radius: 10px;
     max-width: 400px;
     text-align: left;
     margin-left: 20px;
