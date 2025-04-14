@@ -1,1 +1,1 @@
-Front End: developed own design/layout suggestion, and worked on final layout implementation, mainly CSS
+Worked on management side functionality
