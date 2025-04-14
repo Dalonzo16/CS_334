@@ -1,7 +1,6 @@
 {
     "products": [
         {
-            "id": "1",
             "name": "African Solstice",
             "category": "Herbal Tea",
             "price": "9.99",
@@ -9,7 +8,6 @@
             "image": "african_solstice.png"
         },
         {
-            "id": "2",
             "name": "Apricot Amaretto",
             "category": "Herbal Tea",
             "price": "9.99",
@@ -17,7 +15,6 @@
             "image": "apricot_amaretto.png"
         },
         {
-            "id": "3",
             "name": "Berry Harvest",
             "category": "Black Tea",
             "price": "10.99",
@@ -25,7 +22,6 @@
             "image": "berry_harvest.png"
         },
         {
-            "id": "4",
             "name": "Black Currant",
             "category": "Black Tea",
             "price": "10.99",
@@ -33,7 +29,6 @@
             "image": "black_currant.png"
         },
         {
-            "id": "5",
             "name": "Bombay Chai",
             "category": "Black Tea",
             "price": "10.99",
@@ -41,7 +36,6 @@
             "image": "bombay_chai.png"
         },
         {
-            "id": "6",
             "name": "Cape Orange Quince",
             "category": "Herbal Tea",
             "price": "9.99",
@@ -49,7 +43,6 @@
             "image": "cape_orange_quince.png"
         },
         {
-            "id": "7",
             "name": "Caramel Almond",
             "category": "Black Tea",
             "price": "10.99",
@@ -57,7 +50,6 @@
             "image": "caramel_almond.png"
         },
         {
-            "id": "8",
             "name": "Ceylon Gold",
             "category": "Black Tea",
             "price": "10.99",
@@ -65,7 +57,6 @@
             "image": "ceylon_gold.png"
         },
         {
-            "id": "9",
             "name": "Chamomile Citron",
             "category": "Herbal Tea",
             "price": "9.99",
@@ -73,7 +64,6 @@
             "image": "chamomile_citron.png"
         },
         {
-            "id": "10",
             "name": "Citrus Mint",
             "category": "Herbal Tea",
             "price": "9.99",
@@ -81,7 +71,6 @@
             "image": "citrus_mint.png"
         },
         {
-            "id": "11",
             "name": "Darjeeling Quince",
             "category": "Black Tea",
             "price": "10.99",
@@ -89,7 +78,6 @@
             "image": "darjeeling_quince.png"
         },
         {
-            "id": "12",
             "name": "Earl Grey",
             "category": "Black Tea",
             "price": "10.99",
@@ -97,7 +85,6 @@
             "image": "earl_grey.png"
         },
         {
-            "id": "13",
             "name": "Echinacea, Ginger & Elderberry",
             "category": "Green Tea",
             "price": "8.99",
@@ -105,7 +92,6 @@
             "image": "echinacea_ginger_elderberry.png"
         },
         {
-            "id": "14",
             "name": "Elderflower Rose",
             "category": "Herbal Tea",
             "price": "9.99",
@@ -113,7 +99,6 @@
             "image": "elderflower_rose.png"
         },
         {
-            "id": "15",
             "name": "Estate Darjeeling",
             "category": "Black Tea",
             "price": "10.99",
@@ -121,7 +106,6 @@
             "image": "estate_darjeeling.png"
         },
         {
-            "id": "16",
             "name": "Floral Rooibos",
             "category": "Herbal Tea",
             "price": "9.99",
@@ -129,7 +113,6 @@
             "image": "floral_rooibos.png"
         },
         {
-            "id": "17",
             "name": "Genmaicha",
             "category": "Green Tea",
             "price": "8.99",
@@ -137,7 +120,6 @@
             "image": "genmaicha.png"
         },
         {
-            "id": "18",
             "name": "Ginger Lemongrass",
             "category": "Herbal Tea",
             "price": "9.99",
@@ -145,7 +127,6 @@
             "image": "ginger_lemongrass.png"
         },
         {
-            "id": "19",
             "name": "Green Pomegranate",
             "category": "Herbal Tea",
             "price": "9.99",
@@ -153,7 +134,6 @@
             "image": "green_pomegranate.png"
         },
         {
-            "id": "20",
             "name": "Green Sweet Jasmine",
             "category": "Green Tea",
             "price": "8.99",
@@ -161,7 +141,6 @@
             "image": "green_sweet_jasmine.png"
         },
         {
-            "id": "21",
             "name": "Harvest Apple Spice",
             "category": "Herbal Tea",
             "price": "9.99",
@@ -169,7 +148,6 @@
             "image": "harvest_apple_spice.png"
         },
         {
-            "id": "22",
             "name": "Hibiscus Blossom",
             "category": "Herbal Tea",
             "price": "9.99",
@@ -177,7 +155,6 @@
             "image": "hibiscus_blossom.png"
         },
         {
-            "id": "23",
             "name": "Iced Blue Mint Nectar",
             "category": "Herbal Tea",
             "price": "9.99",
@@ -185,7 +162,6 @@
             "image": "iced_blue_mint_nectar.png"
         },
         {
-            "id": "24",
             "name": "Iced Green Mango Peach",
             "category": "Green Tea",
             "price": "8.99",
@@ -193,7 +169,6 @@
             "image": "iced_green_mango_peach.png"
         },
         {
-            "id": "25",
             "name": "Lemon Lavender",
             "category": "Herbal Tea",
             "price": "9.99",
@@ -201,7 +176,6 @@
             "image": "lemon_lavender.png"
         },
         {
-            "id": "26",
             "name": "Lemon Mint Chamomile",
             "category": "Herbal Tea",
             "price": "9.99",
@@ -209,7 +183,6 @@
             "image": "lemon_mint_chamomile.png"
         },
         {
-            "id": "27",
             "name": "Mango Citron",
             "category": "Herbal Tea",
             "price": "9.99",
@@ -217,7 +190,6 @@
             "image": "mango_citron.png"
         },
         {
-            "id": "28",
             "name": "Peach Blossom",
             "category": "White Tea",
             "price": "12.99",
@@ -225,7 +197,6 @@
             "image": "peach_blossom.png"
         },
         {
-            "id": "29",
             "name": "Pomegranate Vanilla",
             "category": "Herbal Tea",
             "price": "9.99",
@@ -233,7 +204,6 @@
             "image": "pomegranate_vanilla.png"
         },
         {
-            "id": "30",
             "name": "Raspberry Nectar",
             "category": "Herbal Tea",
             "price": "9.99",
@@ -241,7 +211,6 @@
             "image": "raspberry_nectar.png"
         },
         {
-            "id": "31",
             "name": "Sweet Vanilla Chai",
             "category": "Black Tea",
             "price": "10.99",
@@ -249,7 +218,6 @@
             "image": "sweet_vanilla_chai.png"
         },
         {
-            "id": "32",
             "name": "Turmeric Lemon",
             "category": "Herbal Tea",
             "price": "9.99",
@@ -257,7 +225,6 @@
             "image": "tumeric_lemon.png"
         },
         {
-            "id": "33",
             "name": "White Silver Needle",
             "category": "White Tea",
             "price": "12.99",
@@ -265,7 +232,6 @@
             "image": "white_silver_needle.png"
         },
         {
-            "id": "34",
             "name": "White Vanilla Apple",
             "category": "White Tea",
             "price": "12.99",
@@ -273,7 +239,6 @@
             "image": "white_vanilla_apple.png"
         },
         {
-            "id": "35",
             "name": "Winter Chai",
             "category": "Herbal Tea",
             "price": "9.99",
@@ -283,9 +248,24 @@
     ],
     "users": [
         {
-            "userName": "admin",
             "email": "tea.admin@web.com",
+            "password": "admin",
             "role": "admin"
+        },
+        {
+            "email": "tea.customer1@web.com",
+            "password": "customer",
+            "role": "customer"
+        }
+    ],
+    "orders": [
+        {
+            "email": "tea.customer1@web.com",
+            "items": [
+                {"productId": 16, "quantity": 2},
+                {"productId": 17, "quantity": 1} 
+            ],
+            "orderDate": "2025-04-12"
         }
     ]
 }
