@@ -23,6 +23,10 @@ dbReq.onupgradeneeded = function(event) {
         keyPath: 'id',
         autoIncrement: true
     });
+    event.target.transaction.oncomplete = function() {
+        // now it's safe to access object stores
+        populateDB();
+    };
 }
 
 //if DB is opened successfully then initialize the db variable and populate the DB
