@@ -1,1 +1,1 @@
-Design suggestions and tested to make sure the front end components were accurate and went to the correct pages. Also created the github pages link.
+Implemented CRUD operations for IndexedDB and implemented IndexedDB
