@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - Herbal Tea Co.</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/tea_logo2.png">
+    <script src="scripts/cart.js"></script>
+    <script src="scripts/shop.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Herbal Tea Co.</h1>
+        <nav>
+            <a href="main.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <a href="checkout.html" class="cart-icon">
+            <img src="assets/images/cart-icon2.png" alt="Shopping Cart">
+            <span id="cart-count">0</span>
+        </a>
+    </header>
+
+    <div class="shop-container">
+        <aside class="filters">
+            <h2>Filter by</h2>
+
+            <div class="filter-group">
+                <label for="category">Category:</label>
+                <select id="category">
+                    <option value="all">All</option>
+                    <option value="Black Tea">Black Tea</option>
+                    <option value="Green Tea">Green Tea</option>
+                    <option value="Herbal Tea">Herbal Tea</option>
+                    <option value="White Tea">White Tea</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="price">Price Range:</label>
+                <select id="price">
+                    <option value="all">All</option>
+                    <option value="low">Under $10</option>
+                    <option value="mid">$10 - $20</option>
+                    <option value="high">Over $20</option>
+                </select>
+            </div>
+        </aside>
+
+        <section class="product-grid">
+            <h2>All Products</h2>
+            <div class="shop-products"></div>
+        </section>
+
+    </div>
+
+    <!-- Footer section with social media links, and legal links -->
+    <footer>
+        <div class="footer-content">
+            <div class="important-links">
+                <a href="#">Terms & Conditions</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">FAQ</a>
+            </div>
+        </div>
+        <p>&copy 2025 Herbal Tea Shop. All rights reserved.</p>
+    </footer>
+
+    <!-- Popup for Cart Confirmation -->
+    <!-- <div id="cart-popup" class="cart-popup hidden">
+        <div class="cart-popup-content">
+            <span class="close-popup">&times;</span>
+            <h3>Item Added</h3>
+            <div class="popup-product-info">
+                <img id="popup-image" src="" alt="Tea Image">
+                <div class="popup-details">
+                    <p id="popup-name"></p>
+                    <p id="popup-quantity"></p>
+                    <p id="popup-price"></p>
+                </div>
+            </div>
+            <div class="popup-buttons">
+                <button id="continue-shopping">Continue Shopping</button>
+                <button id="go-to-checkout">Proceed to Checkout</button>
+            </div>
+        </div>
+     </div> -->
+    <script src="scripts/indexedDB.js"></script>
+    <!-- <script src="scripts/cart.js"></script> -->
+    <!-- <script src="scripts/shop.js"></script> -->
+</body>
+</html>
