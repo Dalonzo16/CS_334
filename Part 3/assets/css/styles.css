@@ -36,12 +36,31 @@ header {
     background-color: var(--color_black);
     color: var(--color_white);
     padding: 15px;
+    padding-bottom: 20px;
     text-align: center;
 }
 
 button:disabled {
     opacity: 0.5;
     cursor: not-allowed;
+}
+
+#login_button {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    cursor: pointer;
+}
+
+#logout_button {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 17px;
+    right: 25px;
+    cursor: pointer;
 }
 
 header nav {
@@ -738,8 +757,12 @@ footer {
     overflow-y: auto;
 }
 
-.management-section.active {
-    display: grid;
+.edit-btn {
+    margin-bottom: 5px;
+}
+
+.cancel-btn {
+    margin-bottom: 5px;
 }
 
 .order-list {

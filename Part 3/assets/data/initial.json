@@ -251,21 +251,17 @@
             "email": "tea.admin@web.com",
             "password": "admin",
             "role": "admin"
-        },
-        {
-            "email": "tea.customer1@web.com",
-            "password": "customer",
-            "role": "customer"
         }
     ],
     "orders": [
         {
             "email": "tea.customer1@web.com",
+            "address": "sdakfhsdlk",
             "items": [
                 {"productId": 16, "quantity": 2},
                 {"productId": 17, "quantity": 1} 
             ],
-            "orderDate": "2025-04-12"
+            "orderDate": "04/22/2025"
         }
     ]
 }

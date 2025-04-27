@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	const orderSummary = document.getElementById("order-summary");
 	const emptyCartMessage = document.querySelector(".empty-cart-message");
 
+
 	const waitForDB = new Promise(resolve => {
 		if (db) return resolve();
 		const checkDB = setInterval(() => {
@@ -92,9 +93,17 @@ document.addEventListener("DOMContentLoaded", () => {
 			orderSummary.innerHTML = "<p>Something went wrong. Please try again later.</p>";
 		});
 
+	// format card number input
+	document.getElementById("card-number").addEventListener("input", function(e) {
+		let value = e.target.value.replace(/\D/g, ""); // remove non-digits
+		value = value.substring(0, 16); // limit to 16 digits (real digits, no spaces)
+		let formatted = value.match(/.{1,4}/g); // split into groups of 4
+		e.target.value = formatted ? formatted.join(" ") : "";
+	});
+
 	// Handle checkout form submission
 	const checkoutForm = document.getElementById("checkout-form");
-	checkoutForm.addEventListener("submit", (e) => {
+	checkoutForm.addEventListener("submit", async(e) => {
 		e.preventDefault(); // Prevent actual form submission
 
 		// Get and validate form field values
@@ -104,21 +113,47 @@ document.addEventListener("DOMContentLoaded", () => {
 		const payment = document.getElementById("payment").value;
 		const cardNumber = document.getElementById("card-number").value.trim();
 
-		if (!name || !email || !address || !payment || !/^\d{16}$/.test(cardNumber)) {
+		const cleanCardNumber = cardNumber.replace(/\s/g, ""); // remove spaces
+		if (!name || !email || !address || !payment || !/^\d{16}$/.test(cleanCardNumber)) {
 			alert("Please fill out all fields correctly.");
 			return;
 		}
-
-		// Simulate successful order submission
+	
+		await placeOrder(cart, email, address); // save order to DB
 		alert("Thank you for your order!");
-
-		// Clear cart from localStorage
-		localStorage.removeItem("cart");
-
-		// Show a success message in place of the cart summary
-		orderSummary.innerHTML = "<h2>Your order has been placed successfully!</h2>";
-
-		// Reset the checkout form
-		checkoutForm.reset();
+		localStorage.removeItem("cart"); // Clear cart from localStorage
+		orderSummary.innerHTML = "<h2>Your order has been placed successfully!</h2>"; // Show success message
+		checkoutForm.reset(); // Reset the checkout form
 	});
 });
+
+async function placeOrder(cart, email, address) {
+    if (!db) {
+        console.error("Database not ready.");
+        return;
+    }
+
+	// get and format the current date
+	const now = new Date();
+    const formattedDate = `${now.getMonth() + 1}/${now.getDate()}/${now.getFullYear()}`;
+
+    // Prepare order object
+    const order = {
+        email: email,
+		address: address,
+        items: cart.map(item => ({
+            productId: item.id,
+            quantity: item.quantity
+        })),
+        orderDate: formattedDate
+    };
+
+    try {
+        // Save order to the "orders" object store
+        await add_new_object(order, "orders");
+        console.log("Order placed successfully:", order);
+    } catch (error) {
+        console.error("Error placing order:", error);
+    }
+}
+
