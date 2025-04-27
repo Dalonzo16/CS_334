@@ -248,7 +248,7 @@
     ],
     "users": [
         {
-            "email": "tea.admin@web.com",
+            "email": "admin@web.com",
             "password": "admin",
             "role": "admin"
         }
