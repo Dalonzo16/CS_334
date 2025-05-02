@@ -269,7 +269,23 @@ def add_new_order():
                     (newOrder['email'], newOrder['address'], str(newOrder['items']), newOrder['orderDate']))
         
         conn.commit()
+        # Get the inserted product using the auto-incremented ID
+        newId = cur.lastrowid
+        cur.execute("SELECT * FROM orders WHERE id = ?", (newId,))
+        addedOrder = cur.fetchone()
+
         conn.close()
+
+        # Convert to dict if needed
+        orderDict = {
+            "id": addedOrder[0],
+            "email": addedOrder[1],
+            "address": addedOrder[2],
+            "items": addedOrder[3],
+            "orderDate": addedOrder[4]
+        }
+
+        return jsonify(orderDict), 201
 
     except Exception as e:
         print(f"Error while adding new order: {e}")
