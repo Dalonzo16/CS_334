@@ -171,7 +171,7 @@ async function send_confimration_email(email, items, total){
 	}
 
 
-	await fetch("http://127.0.0.1:5000/sendEmail", {
+	await fetch("https://Group1.pythonanywhere.com/sendEmail", {
 		method: "POST",
 		headers: {
 			"Content-Type": "application/json",
