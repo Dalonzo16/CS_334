@@ -39,13 +39,13 @@ def get_products():
         conn = connectToDatabase()
         cur = conn.cursor()
         
-        cur.execute("SELECT * FROM product")
+        cur.execute("SELECT * FROM products")
         results = cur.fetchall()
         conn.commit()
         conn.close()
 
         for result in results:
-            new_row = {'productID' : result[0], 'name' : result[1], 'category': result[2], 'price' : result[3], 'description' : result[4], 'image' : result[5]}
+            new_row = {'id' : result[0], 'name' : result[1], 'category': result[2], 'price' : result[3], 'description' : result[4], 'image' : result[5]}
             products.append(new_row)
 
         return jsonify(products)
@@ -65,7 +65,7 @@ def add_new_product():
         conn = connectToDatabase()
         cur = conn.cursor()
         
-        cur.execute("INSERT INTO product(name, category, price, description, image) VALUES(?, ?, ?, ?, ?)", 
+        cur.execute("INSERT INTO products(name, category, price, description, image) VALUES(?, ?, ?, ?, ?)", 
                     (newProduct['name'], newProduct['category'], newProduct['price'], newProduct['description'], newProduct['image']))
         
         conn.commit()
@@ -87,7 +87,7 @@ def update_product():
         conn = connectToDatabase()
         cur = conn.cursor()
 
-        cur.execute("UPDATE product SET name = ?, category = ?, price = ?, description = ?, image = ? WHERE productID = ?" , 
+        cur.execute("UPDATE products SET name = ?, category = ?, price = ?, description = ?, image = ? WHERE id = ?" , 
                     (updated_product['name'], updated_product['category'], updated_product['price'], updated_product['description'], 
                      updated_product['image'], updated_product['id']))
         
@@ -135,7 +135,7 @@ def get_users():
         conn.close()
 
         for result in results:
-            new_row = {'userID' : result[0], 'email' : result[1], 'password': result[2], 'role' : result[3]}
+            new_row = {'id' : result[0], 'email' : result[1], 'password': result[2], 'role' : result[3]}
             users.append(new_row)
 
         return jsonify(users)
@@ -174,7 +174,7 @@ def update_user():
         conn = connectToDatabase()
         cur = conn.cursor()
 
-        cur.execute("UPDATE users SET email = ?, password = ?, role = ? WHERE userID = ?",
+        cur.execute("UPDATE users SET email = ?, password = ?, role = ? WHERE id = ?",
                     (updated_user['email'], updated_user['password'], updated_user['role'], updated_user['id']))
         
         conn.commit()
@@ -201,7 +201,7 @@ def get_orders():
         conn.close()
 
         for result in results:
-            new_row = {'orderID' : result[0], 'email' : result[1], 'address': result[2], 'items' : result[3], 'orderDate': result[4]}
+            new_row = {'id' : result[0], 'email' : result[1], 'address': result[2], 'items' : result[3], 'orderDate': result[4]}
             orders.append(new_row)
 
         return jsonify(orders)
@@ -240,7 +240,7 @@ def update_order():
         conn = connectToDatabase()
         cur = conn.cursor()
 
-        cur.execute("UPDATE orders SET email = ?, address = ?, items = ?, orderDate = ? WHERE orderID = ?",
+        cur.execute("UPDATE orders SET email = ?, address = ?, items = ?, orderDate = ? WHERE id = ?",
                     (updated_order['email'], updated_order['address'], str(updated_order['items']), updated_order['orderDate'], updated_order['id']))
         
         conn.commit()
