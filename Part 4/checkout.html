@@ -12,6 +12,7 @@
     <!-- Title and Navigation Links -->
     <header>
         <h1>Herbal Tea Co.</h1>
+        <button id="login_button" onClick="window.location.href='login.html'">Login</button>
         <nav>
             <a href="main.html">Home</a>
             <a href="shop.html">Shop</a>
@@ -42,13 +43,13 @@
             <h3>Billing Information</h3>
             <form id="checkout-form" class="billing-info">
                 <label for="full-name">Full Name</label>
-                <input type="text" id="full-name" name="full-name" required>
+                <input type="text" id="full-name" placeholder="John Doe" name="full-name" required>
     
                 <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" placeholder="email@web.com" name="email" required>
     
                 <label for="address">Shipping Address</label>
-                <input type="text" id="address" name="address" required>
+                <input type="text" id="address" placeholder="1500 S Ave K" name="address" required>
     
                 <label for="payment">Payment Method</label>
                 <select id="payment" name="payment" required>
@@ -57,9 +58,9 @@
                 </select>
 
                 <label for="card-number">Card Number</label>
-                <input type="text" id="card-number" name="card-number" maxlength="16" pattern="\d{16}" required>
+                <input type="text" id="card-number" placeholder="1111 2222 3333 4444" name="card-number" maxlength="19" inputmode="numeric" required>
     
-                <button type="submit">Place Order</button>
+                <button type="submit" onclick="placeOrder()">Place Order</button>
             </form>
         </div>
     </div>

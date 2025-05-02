@@ -202,3 +202,9 @@ function restoreEditButtons() {
 document.addEventListener("DOMContentLoaded", () => {
     load_admin_products();
 });
+
+function confirmLogout() {
+    if (confirm("Are you sure you want to logout?")) {
+        window.location.href = "main.html"; // return to main html
+    }
+}

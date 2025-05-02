@@ -3,87 +3,96 @@ const DB_NAME = 'TeaShopDB';
 const DB_VERSION = 1;
 const JSON_FILE_PATH = 'assets/data/initial.json';
 
-//open a database request
-let dbReq = indexedDB.open(DB_NAME, DB_VERSION);
+// open the database
+const dbReq = indexedDB.open(DB_NAME, DB_VERSION);
 
-//on upgrade checks to see if there is a different version
 dbReq.onupgradeneeded = function(event) {
-    // Set the db variable to our database so we can use it 
     db = event.target.result;
 
-    db.createObjectStore('products', {
-        keyPath: 'id',
-        autoIncrement: true
-    });
-    db.createObjectStore('users', {
-        keyPath: 'id',
-        autoIncrement: true
-    });
-    db.createObjectStore('orders', {
-        keyPath: 'id',
-        autoIncrement: true
-    });
-    event.target.transaction.oncomplete = function() {
-        // now it's safe to access object stores
-        populateDB();
-    };
-}
+    console.log("Upgrading or creating database...");
 
-//if DB is opened successfully then initialize the db variable and populate the DB
+    // Create object stores with autoIncrement id
+    if (!db.objectStoreNames.contains('products')) {
+        db.createObjectStore('products', { keyPath: 'productID', autoIncrement: false });
+    }
+    if (!db.objectStoreNames.contains('users')) {
+        db.createObjectStore('users', { keyPath: 'id', autoIncrement: true });
+    }
+    if (!db.objectStoreNames.contains('orders')) {
+        db.createObjectStore('orders', { keyPath: 'id', autoIncrement: true });
+    }
+
+    event.target.transaction.oncomplete = function() {
+        console.log("Object stores created, populating...");
+        populateDB(); // populate only once after upgrade
+    };
+};
+
 dbReq.onsuccess = function(event) {
     db = event.target.result;
-    populateDB(); 
-}
+    console.log("Database opened successfully!");
+};
 
-//this function populates the object store 'products' from JSON file
-async function populateDB(){
+dbReq.onerror = function(event) {
+    console.error("Database error:", event.target.errorCode);
+};
 
-    //check if the object store 'products' is empty
-    const productsEmpty = await isEmpty('products');
-    const usersEmpty = await isEmpty('users')
-    const ordersEmpty = await isEmpty('orders')
 
-    if(!productsEmpty && !usersEmpty && !ordersEmpty){
-
-        //if its not then display this message and do nothing
-        console.log("This object stores are not empty");
-        return;
-    }
+// this function populates the object stores from the initial.json file
+async function populateDB() {
     try {
-        //if it is empty then fetch the JSON file and populate the 'products' object store
-        const response = await fetch(JSON_FILE_PATH);
-        const data = await response.json()
-    
-        let tx = db.transaction(['products', 'users', 'orders'], 'readwrite');
-        let productStore = tx.objectStore('products');
-        let userStore = tx.objectStore('users');
-        let orderStore = tx.objectStore('orders');
+        const productsEmpty = await isEmpty('products');
+        const usersEmpty = await isEmpty('users');
+        const ordersEmpty = await isEmpty('orders');
 
-        // ensure that object store need to be populated, and JSON data exists and is an array
-        if (productsEmpty && Array.isArray(data.products)) {
-            data.products.forEach(product => productStore.add(product).onsuccess = () => {
-                console.log(`Added product: ${product.name}`)
-            });
-        }
-        // ensure that object store need to be populated, and JSON data exists and is an array
-        if (usersEmpty && Array.isArray(data.users)) {
-            data.users.forEach(user => userStore.add(user).onsuccess = () => {
-                console.log(`Added user: ${user.name}`)
-            });
-        }
-        // ensure that object store need to be populated, and JSON data exists and is an array
-        if (ordersEmpty && Array.isArray(data.orders)) {
-            data.orders.forEach(order => orderStore.add(order).onsuccess = () => {
-                console.log(`Added order: ${order.id}`)
-            });
+        if (!productsEmpty && !usersEmpty && !ordersEmpty) {
+            console.log("Database already populated.");
+            return;
         }
 
-        tx.oncomplete = function() { console.log('populated the database!') }
-        tx.onerror = function(event) {
-            alert('error populating the database ' + event.target.errorCode);
+
+        // const response = await fetch('https://group1.pythonanywhere.com/getProducts');
+        // const data = await response.json();
+
+        // const responseUser = await fetch('https://group1.pythonanywhere.com/getUsers');
+        // const dataUser = await responseUser.json();
+
+        const responseProduct = await fetch('http://127.0.0.1:5000/getProducts');
+        const dataProduct = await responseProduct.json();
+
+        const responseUser = await fetch('http://127.0.0.1:5000/getUsers');
+        const dataUser = await responseUser.json();
+
+        const responseOrder = await fetch('http://127.0.0.1:5000/getOrders');
+        const dataOrder = await responseOrder.json();
+
+
+        const tx = db.transaction(['products', 'users', 'orders'], 'readwrite');
+        const productStore = tx.objectStore('products');
+        const userStore = tx.objectStore('users');
+        const orderStore = tx.objectStore('orders');
+        console.log(dataProduct[0])
+
+        if (productsEmpty && Array.isArray(dataProduct)) {
+            dataProduct.forEach(product => {
+                productStore.add(product);
+            });
         }
+        if (usersEmpty && Array.isArray(dataUser)) {
+            dataUser.forEach(user => {
+                userStore.add(user);
+            });
+        }
+        if (ordersEmpty && Array.isArray(dataOrder)) {
+            dataOrder.forEach(order => {
+                orderStore.add(order);
+            });
+        }
+
+        tx.oncomplete = () => console.log('Database populated!');
+        tx.onerror = event => console.error('Transaction error:', event.target.error);
     } catch (error) {
-        console.error("Failed to fetch and populate DB:", error);
+        console.error("Failed to populate database:", error);
     }
 }
 
@@ -101,8 +110,55 @@ function add_new_object(new_item_object, objectStoreName) {
             console.error('Error storing new object:', event.target.errorCode);
             reject(event.target.errorCode);
         };
+
+        if(objectStoreName === 'products'){
+            fetch("http://127.0.0.1:5000/addNewProduct", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(new_item_object),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => console.error('Error storing product:', error));
+        }
+
+        else if(objectStoreName === 'users'){
+            fetch("http://127.0.0.1:5000/addNewUser", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(new_item_object),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => console.error('Error storing user:', error));
+        }
+
+        else if(objectStoreName === 'orders'){
+            fetch("http://127.0.0.1:5000/addNewOrder", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(new_item_object),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => console.error('Error storing order:', error));
+        }
     });
+	
 }
+
 
 //deletes an object form an object store
 function delete_object(objectID, objectStoreName){
@@ -118,6 +174,22 @@ function delete_object(objectID, objectStoreName){
     tx.oncomplete = function() {console.log('item number ' + objectID + ' removed')}
     tx.onerror = function(event) {
         alert('error deleteing product' + event.target.errorCode);
+    }
+
+    if(objectStoreName === 'products'){
+
+        fetch("http://127.0.0.1:5000/deleteProduct", {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ productID: objectID })
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+        })
+        .catch(error => console.error('Error storing order:', error));
     }
 }
 
@@ -139,7 +211,56 @@ function updateObject(updatedObject, objectStoreName) {
 
         tx.oncomplete = () => resolve(); // resolve when transaction is done
         tx.onerror = (event) => reject(event.target.errorCode);
+
+        if(objectStoreName === 'products'){
+
+            fetch("http://127.0.0.1:5000/updateProduct", {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(updatedObject),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => console.error('Error storing product:', error));
+        }
+
+        else if(objectStoreName === 'users'){
+
+            fetch("http://127.0.0.1:5000/updateUser", {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(updatedObject),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => console.error('Error storing user:', error));
+        }
+
+        else if(objectStoreName === 'orders'){
+
+            fetch("http://127.0.0.1:5000/updateOrder", {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(updatedObject),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+            })
+            .catch(error => console.error('Error storing order:', error));
+        }
     });
+
 }
 
 
