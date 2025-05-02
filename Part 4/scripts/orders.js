@@ -38,6 +38,7 @@ function renderOrderRow(order) {
 	row.innerHTML = `
 		<td>${order.id}</td>
 		<td>${order.email}</td>
+		<td>${order.address}</td>
 		<td>${JSON.stringify(order.items)}</td>
 		<td>${order.orderDate}</td>
 		<td>
@@ -82,6 +83,7 @@ function loadEditForm(order) {
 	row.innerHTML = `
 		<td>${order.id}</td>
 		<td><input type="email" class="edit-email" value="${order.email}"></td>
+		<td><input type="address" class="edit-address" value="${order.address}"></td>
 		<td><textarea class="edit-items">${JSON.stringify(order.items)}</textarea></td>
 		<td><input type="date" class="edit-date" value="${order.orderDate}"></td>
 		<td>
@@ -113,6 +115,7 @@ function loadEditForm(order) {
 		const updatedOrder = {
 			id: order.id,
 			email: row.querySelector(".edit-email").value.trim(),
+			address:row.querySelector(".edit-address").value.trim(),
 			items: parsedItems,
 			orderDate: row.querySelector(".edit-date").value
 		};
@@ -155,3 +158,9 @@ function restoreEditButtons() {
 document.addEventListener("DOMContentLoaded", () => {
 	load_admin_orders();
 });
+
+function confirmLogout() {
+    if (confirm("Are you sure you want to logout?")) {
+        window.location.href = "main.html"; // return to main html
+    }
+}

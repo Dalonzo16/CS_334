@@ -8,19 +8,10 @@
         <link rel="icon" type="image/x-icon" href="assets/images/tea_logo2.png">
     </head>
     <body>
-        <!-- Title and Navigation Links -->
+
         <header>
             <h1>Herbal Tea Co.</h1>
-            <nav>
-                <a href="main.html">Home</a>
-                <a href="shop.html">Shop</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-            <a href="checkout.html" class="cart-icon">
-                <img src="assets/images/cart-icon2.png" alt="Shopping Cart">
-                <span id="cart-count">0</span>
-            </a>
+            <button id="logout_button" onClick="confirmLogout()">Logout</button>
         </header>
 
         <div class="dashboard-container">
@@ -90,6 +81,6 @@
             <p>&copy 2025 Herbal Tea Shop. All rights reserved.</p>
         </footer>
         <script src="scripts/indexedDB.js"></script>
-        <script src="scripts/admin.js"></script>
+        <script src="scripts/admin.js"></script>        
     </body>
 </html>

@@ -2,6 +2,7 @@
 const addUserForm = document.querySelector("#add-user-form");
 const userList = document.querySelector(".user-list tbody");
 let currentlyEditingId = null;
+let users = null
 
 // Load and display all users from IndexedDB
 async function load_admin_users() {
@@ -18,7 +19,7 @@ async function load_admin_users() {
         });
 
         // Fetch all users from the store
-        let users = await loadAllFromStore("users");
+        users = await loadAllFromStore("users");
 
         // Sort by ID
         users.sort((a, b) => Number(a.id) - Number(b.id));
@@ -54,6 +55,10 @@ function renderUserRow(user) {
     // Attach edit and delete handlers
     row.querySelector(".edit-btn").addEventListener("click", () => loadEditForm(user));
     row.querySelector(".delete-btn").addEventListener("click", () => {
+        if (users.length === 1) {
+            alert("Cannot delete the only manager account...")
+            return
+        }
         if (confirm("Delete this user?")) {
             delete_object(user.id, "users");
             load_admin_users(); // Refresh table
@@ -166,3 +171,9 @@ function restoreEditButtons() {
 document.addEventListener("DOMContentLoaded", () => {
     load_admin_users();
 });
+
+function confirmLogout() {
+    if (confirm("Are you sure you want to logout?")) {
+        window.location.href = "main.html"; // return to main html
+    }
+}

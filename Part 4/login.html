@@ -26,15 +26,18 @@
         <div class="login-box">
             <h2>Login</h2>
             <form action="management.html">
-                <label for="username">Username</label>
-                <input type="text" id="username" placeholder="Manager Username">
+                <label for="username">Email</label>
+                <input type="text" id="username" placeholder="Email" required>
     
                 <label for="password">Password</label>
-                <input type="password" id="password" placeholder="Password">
+                <input type="password" id="password" placeholder="Password" required>
     
-                <button type="submit">Login</button>
+                <button type="submit" onclick="checkCredentials()">Login</button>
             </form>
         </div>
     </section>
+
+    <script src="scripts/login.js"></script>
+    <script src="scripts/indexedDB.js"></script>
 </body>
 </html>

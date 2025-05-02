@@ -248,24 +248,20 @@
     ],
     "users": [
         {
-            "email": "tea.admin@web.com",
-            "password": "admin",
+            "email": "admin@web.com",
+            "password": "admin12`",
             "role": "admin"
-        },
-        {
-            "email": "tea.customer1@web.com",
-            "password": "customer",
-            "role": "customer"
         }
     ],
     "orders": [
         {
             "email": "tea.customer1@web.com",
+            "address": "123 fake street",
             "items": [
                 {"productId": 16, "quantity": 2},
                 {"productId": 17, "quantity": 1} 
             ],
-            "orderDate": "2025-04-12"
+            "orderDate": "2025-22-04"
         }
     ]
 }
