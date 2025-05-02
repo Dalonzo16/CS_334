@@ -208,3 +208,9 @@ function confirmLogout() {
         window.location.href = "main.html"; // return to main html
     }
 }
+
+window.addEventListener('DOMContentLoaded', () => {
+    dbReady.then(() => {
+        populateDB(); // now guaranteed safe to call on page reload
+    });
+});

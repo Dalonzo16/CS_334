@@ -15,7 +15,7 @@ app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False
 mail = Mail(app)
 
-__dataBaseName__ =  "/Users/devonalonzo/Downloads/CS_334/Part 4/assets/data/teaShop.sqlite"
+__dataBaseName__ =  "/home/bassturtle4/Documents/GitHub/CS_334/Part 4/assets/data/teaShop.sqlite"
 
 def connectToDatabase() :
     """This method tries to connect to the teaShop Database file. Terminates program on failure
@@ -57,7 +57,6 @@ def get_products():
 
 @app.route('/addNewProduct', methods=['POST'])
 def add_new_product():
-
     try:
         newProduct = request.json
         print(newProduct)
@@ -65,19 +64,43 @@ def add_new_product():
         conn = connectToDatabase()
         cur = conn.cursor()
         
-        cur.execute("INSERT INTO products(name, category, price, description, image) VALUES(?, ?, ?, ?, ?)", 
-                    (newProduct['name'], newProduct['category'], newProduct['price'], newProduct['description'], newProduct['image']))
+        # Insert the new product
+        cur.execute("""
+            INSERT INTO products(name, category, price, description, image) 
+            VALUES(?, ?, ?, ?, ?)
+        """, (
+            newProduct['name'], 
+            newProduct['category'], 
+            newProduct['price'], 
+            newProduct['description'], 
+            newProduct['image']
+        ))
         
         conn.commit()
 
-        cur.execute("UPDATE")
+        # Get the inserted product using the auto-incremented ID
+        newId = cur.lastrowid
+        cur.execute("SELECT * FROM products WHERE id = ?", (newId,))
+        addedProduct = cur.fetchone()
+
         conn.close()
+
+        # Convert to dict if needed
+        productDict = {
+            "id": addedProduct[0],
+            "name": addedProduct[1],
+            "category": addedProduct[2],
+            "price": addedProduct[3],
+            "description": addedProduct[4],
+            "image": addedProduct[5]
+        }
+
+        return jsonify(productDict), 201
 
     except Exception as e:
         print(f"Error while adding new product: {e}")
         return jsonify({"error": "Failed to add new product"}), 500
 
-    return jsonify("new product added")
 
 @app.route('/updateProduct', methods=['PUT'])
 def update_product():
@@ -110,7 +133,7 @@ def delete_product():
         conn = connectToDatabase()
         cur = conn.cursor()
 
-        cur.execute("DELETE FROM product WHERE productID = ?", deletion_product['productID'])
+        cur.execute("DELETE FROM products WHERE id = ?", (deletion_product['id'],))
 
         conn.commit()
         conn.close()
@@ -186,6 +209,28 @@ def update_user():
     
     return jsonify("updated user in sqlite")
 
+@app.route('/deleteUser', methods=['DELETE'])
+def delete_user():
+    try:
+        data = request.json
+        user_id = data.get('id')
+
+        if user_id is None:
+            return jsonify({"error": "User ID is required"}), 400
+
+        conn = connectToDatabase()
+        cur = conn.cursor()
+        cur.execute("DELETE FROM users WHERE id = ?", (user_id,))
+        conn.commit()
+        conn.close()
+
+        return jsonify({"message": f"User with ID {user_id} deleted successfully"}), 200
+
+    except Exception as e:
+        print(f"Error while deleting user: {e}")
+        return jsonify({"error": "Failed to delete user"}), 500
+
+
 # ------------------------ Order Functions ------------------------
 @app.route('/getOrders')
 def get_orders():
@@ -251,6 +296,25 @@ def update_order():
         return jsonify({"error": "Failed to update order"}), 500
     
     return jsonify("updated order in sqlite")
+
+@app.route('/deleteOrder', methods=['DELETE'])
+def delete_order():
+    try:
+        deletion_order = request.json
+
+        conn = connectToDatabase()
+        cur = conn.cursor()
+
+        cur.execute("DELETE FROM orders WHERE id = ?", (deletion_order['id'],))
+
+        conn.commit()
+        conn.close()
+
+    except Exception as e:
+        print(f"Error while deleting order: {e}")
+        return jsonify({"error": "Failed to delete order"}), 500
+    
+    return jsonify("deleted order in sqlite")
 
 # ------------------------ Email Function ------------------------
 @app.route('/sendEmail', methods=['POST'])
