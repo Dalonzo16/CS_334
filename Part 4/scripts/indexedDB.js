@@ -13,7 +13,7 @@ dbReq.onupgradeneeded = function(event) {
 
     // Create object stores with autoIncrement id
     if (!db.objectStoreNames.contains('products')) {
-        db.createObjectStore('products', { keyPath: 'productID', autoIncrement: false });
+        db.createObjectStore('products', { keyPath: 'id', autoIncrement: true });
     }
     if (!db.objectStoreNames.contains('users')) {
         db.createObjectStore('users', { keyPath: 'id', autoIncrement: true });
@@ -39,24 +39,9 @@ dbReq.onerror = function(event) {
 
 
 // this function populates the object stores from the initial.json file
+// this function populates the object stores from the initial.json file
 async function populateDB() {
     try {
-        const productsEmpty = await isEmpty('products');
-        const usersEmpty = await isEmpty('users');
-        const ordersEmpty = await isEmpty('orders');
-
-        if (!productsEmpty && !usersEmpty && !ordersEmpty) {
-            console.log("Database already populated.");
-            return;
-        }
-
-
-        // const response = await fetch('https://group1.pythonanywhere.com/getProducts');
-        // const data = await response.json();
-
-        // const responseUser = await fetch('https://group1.pythonanywhere.com/getUsers');
-        // const dataUser = await responseUser.json();
-
         const responseProduct = await fetch('http://127.0.0.1:5000/getProducts');
         const dataProduct = await responseProduct.json();
 
@@ -66,26 +51,32 @@ async function populateDB() {
         const responseOrder = await fetch('http://127.0.0.1:5000/getOrders');
         const dataOrder = await responseOrder.json();
 
-
         const tx = db.transaction(['products', 'users', 'orders'], 'readwrite');
         const productStore = tx.objectStore('products');
         const userStore = tx.objectStore('users');
         const orderStore = tx.objectStore('orders');
-        console.log(dataProduct[0])
 
-        if (productsEmpty && Array.isArray(dataProduct)) {
+        // Optional: Clear existing data
+        await Promise.all([
+            productStore.clear(),
+            userStore.clear(),
+            orderStore.clear()
+        ]);
+
+        // Insert fresh data
+        if (Array.isArray(dataProduct)) {
             dataProduct.forEach(product => {
-                productStore.add(product);
+                productStore.put(product); // put = add or update
             });
         }
-        if (usersEmpty && Array.isArray(dataUser)) {
+        if (Array.isArray(dataUser)) {
             dataUser.forEach(user => {
-                userStore.add(user);
+                userStore.put(user);
             });
         }
-        if (ordersEmpty && Array.isArray(dataOrder)) {
+        if (Array.isArray(dataOrder)) {
             dataOrder.forEach(order => {
-                orderStore.add(order);
+                orderStore.put(order);
             });
         }
 
