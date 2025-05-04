@@ -39,3 +39,10 @@ function showSection(sectionId) {
     // Show selected section
     document.getElementById(sectionId).classList.add('active');
 }
+
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./scripts/service-worker.js')
+      .then(() => console.log('Service Worker Registered'))
+      .catch(err => console.error('Service Worker registration failed:', err));
+  }
+  
