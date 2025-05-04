@@ -1,0 +1,267 @@
+{
+    "products": [
+        {
+            "name": "African Solstice",
+            "category": "Herbal Tea",
+            "price": "9.99",
+            "description": "A vibrant blend of African rooibos and exotic fruits",
+            "image": "african_solstice.png"
+        },
+        {
+            "name": "Apricot Amaretto",
+            "category": "Herbal Tea",
+            "price": "9.99",
+            "description": "The warm, nutty essence of amaretto paired with ripe apricot",
+            "image": "apricot_amaretto.png"
+        },
+        {
+            "name": "Berry Harvest",
+            "category": "Black Tea",
+            "price": "10.99",
+            "description": "A rich black tea blended with sweet and tart berries for a balanced flavor",
+            "image": "berry_harvest.png"
+        },
+        {
+            "name": "Black Currant",
+            "category": "Black Tea",
+            "price": "10.99",
+            "description": "Deep and jammy, this tea brings the essence of ripe black currants into a bold black tea base",
+            "image": "black_currant.png"
+        },
+        {
+            "name": "Bombay Chai",
+            "category": "Black Tea",
+            "price": "10.99",
+            "description": "A classic chai blend with robust black tea, warming spices, and a hint of sweetness",
+            "image": "bombay_chai.png"
+        },
+        {
+            "name": "Cape Orange Quince",
+            "category": "Herbal Tea",
+            "price": "9.99",
+            "description": "A unique combination of bright citrus and mellow quince, delivering a refreshing and lightly tangy flavor",
+            "image": "cape_orange_quince.png"
+        },
+        {
+            "name": "Caramel Almond",
+            "category": "Black Tea",
+            "price": "10.99",
+            "description": "Sweet caramel and toasted almond create a decadent, dessert-like blck tea",
+            "image": "caramel_almond.png"
+        },
+        {
+            "name": "Ceylon Gold",
+            "category": "Black Tea",
+            "price": "10.99",
+            "description": "A bold and smooth black tea with bright citrus notes and a naturally brisk finish",
+            "image": "ceylon_gold.png"
+        },
+        {
+            "name": "Chamomile Citron",
+            "category": "Herbal Tea",
+            "price": "9.99",
+            "description": "A calming blend of chamomile, lemongrass, and subtle cirtus notes",
+            "image": "chamomile_citron.png"
+        },
+        {
+            "name": "Citrus Mint",
+            "category": "Herbal Tea",
+            "price": "9.99",
+            "description": "A vibrant mix of cool mint and zesty citrus",
+            "image": "citrus_mint.png"
+        },
+        {
+            "name": "Darjeeling Quince",
+            "category": "Black Tea",
+            "price": "10.99",
+            "description": "The floral notes of Darjeeling tea meet the unique tartness of quince fruit",
+            "image": "darjeeling_quince.png"
+        },
+        {
+            "name": "Earl Grey",
+            "category": "Black Tea",
+            "price": "10.99",
+            "description": "A timeless blend of fine black tea infused with fragrant bergamot oil",
+            "image": "earl_grey.png"
+        },
+        {
+            "name": "Echinacea, Ginger & Elderberry",
+            "category": "Green Tea",
+            "price": "8.99",
+            "description": "A powerhouse of immune-boosting ingredients with a slightly spicy, berry-forward flavor",
+            "image": "echinacea_ginger_elderberry.png"
+        },
+        {
+            "name": "Elderflower Rose",
+            "category": "Herbal Tea",
+            "price": "9.99",
+            "description": "A fragrant floral blend with delicate elderflower and sweet rose notes",
+            "image": "elderflower_rose.png"
+        },
+        {
+            "name": "Estate Darjeeling",
+            "category": "Black Tea",
+            "price": "10.99",
+            "description": "A light, aromatic tea has a delicate muscatel flavor and floral notes",
+            "image": "estate_darjeeling.png"
+        },
+        {
+            "name": "Floral Rooibos",
+            "category": "Herbal Tea",
+            "price": "9.99",
+            "description": "A smooth, naturally sweet rooibos tea infused with fragrant floral undertones",
+            "image": "floral_rooibos.png"
+        },
+        {
+            "name": "Genmaicha",
+            "category": "Green Tea",
+            "price": "8.99",
+            "description": "A traditional Japanese blend of green tea and toasted rice, offering a nutty and savory profile.",
+            "image": "genmaicha.png"
+        },
+        {
+            "name": "Ginger Lemongrass",
+            "category": "Herbal Tea",
+            "price": "9.99",
+            "description": "The spicy warmth of ginger paired with the fresh, citrusy flavor of lemongrass",
+            "image": "ginger_lemongrass.png"
+        },
+        {
+            "name": "Green Pomegranate",
+            "category": "Herbal Tea",
+            "price": "9.99",
+            "description": "A bright and refreshing green tea with the tartness of pomegranate",
+            "image": "green_pomegranate.png"
+        },
+        {
+            "name": "Green Sweet Jasmine",
+            "category": "Green Tea",
+            "price": "8.99",
+            "description": "Floral and decadent, this tea combines smooth chocolate with delicate rose petals",
+            "image": "green_sweet_jasmine.png"
+        },
+        {
+            "name": "Harvest Apple Spice",
+            "category": "Herbal Tea",
+            "price": "9.99",
+            "description": "A cozy herbal blend of sweet apples, warm cinnamon, and a touch of clove",
+            "image": "harvest_apple_spice.png"
+        },
+        {
+            "name": "Hibiscus Blossom",
+            "category": "Herbal Tea",
+            "price": "9.99",
+            "description": "A tangy, vibrant herbal tea with the bright, floral notes of hibiscus",
+            "image": "hibiscus_blossom.png"
+        },
+        {
+            "name": "Iced Blue Mint Nectar",
+            "category": "Herbal Tea",
+            "price": "9.99",
+            "description": "A cooling blend of mint with a refreshing hint of blue tea flowers",
+            "image": "iced_blue_mint_nectar.png"
+        },
+        {
+            "name": "Iced Green Mango Peach",
+            "category": "Green Tea",
+            "price": "8.99",
+            "description": "A fruity, chilled herbal tea with bold blueberry flavor and a touch of wine-like richness",
+            "image": "iced_green_mango_peach.png"
+        },
+        {
+            "name": "Lemon Lavender",
+            "category": "Herbal Tea",
+            "price": "9.99",
+            "description": "A calming blend of lemon and lavender",
+            "image": "lemon_lavender.png"
+        },
+        {
+            "name": "Lemon Mint Chamomile",
+            "category": "Herbal Tea",
+            "price": "9.99",
+            "description": "A soothing herbal blend that combines calming chamomile with refreshing mint and citrusy lemon.",
+            "image": "lemon_mint_chamomile.png"
+        },
+        {
+            "name": "Mango Citron",
+            "category": "Herbal Tea",
+            "price": "9.99",
+            "description": "A lovely blend of tropical mango and citrus",
+            "image": "mango_citron.png"
+        },
+        {
+            "name": "Peach Blossom",
+            "category": "White Tea",
+            "price": "12.99",
+            "description": "A soft, floral peach tea with a naturally sweet finish",
+            "image": "peach_blossom.png"
+        },
+        {
+            "name": "Pomegranate Vanilla",
+            "category": "Herbal Tea",
+            "price": "9.99",
+            "description": "A smooth blend of tangy pomegranate and creamy vanilla",
+            "image": "pomegranate_vanilla.png"
+        },
+        {
+            "name": "Raspberry Nectar",
+            "category": "Herbal Tea",
+            "price": "9.99",
+            "description": "A vibrant, fruity tea with the sweet and tart flavor of ripe raspberries",
+            "image": "raspberry_nectar.png"
+        },
+        {
+            "name": "Sweet Vanilla Chai",
+            "category": "Black Tea",
+            "price": "10.99",
+            "description": "A sweet and creamy black tea with cinnamon, cardamom, and vanilla",
+            "image": "sweet_vanilla_chai.png"
+        },
+        {
+            "name": "Turmeric Lemon",
+            "category": "Herbal Tea",
+            "price": "9.99",
+            "description": "A zesty blend of turmeric and lemon, offering a bright and invigorating flavor",
+            "image": "tumeric_lemon.png"
+        },
+        {
+            "name": "White Silver Needle",
+            "category": "White Tea",
+            "price": "12.99",
+            "description": "A permium white tea with a gentle, sweet taste and a floral aroma",
+            "image": "white_silver_needle.png"
+        },
+        {
+            "name": "White Vanilla Apple",
+            "category": "White Tea",
+            "price": "12.99",
+            "description": "The perfect mix of creamy vanilla and crisp apple",
+            "image": "white_vanilla_apple.png"
+        },
+        {
+            "name": "Winter Chai",
+            "category": "Herbal Tea",
+            "price": "9.99",
+            "description": "A warming blend of bold spices, including cinnamon, ginger, and cloves, with a hint of sweetness",
+            "image": "winter_chai.png"
+        }
+    ],
+    "users": [
+        {
+            "email": "admin@web.com",
+            "password": "admin12`",
+            "role": "admin"
+        }
+    ],
+    "orders": [
+        {
+            "email": "tea.customer1@web.com",
+            "address": "123 fake street",
+            "items": [
+                {"productId": 16, "quantity": 2},
+                {"productId": 17, "quantity": 1} 
+            ],
+            "orderDate": "2025-22-04"
+        }
+    ]
+}

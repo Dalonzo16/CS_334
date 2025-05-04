@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Management | Herbal Tea Co.</title>
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="icon" type="image/x-icon" href="assets/images/tea_logo2.png">
+    </head>
+    <body>
+        <header>
+            <h1>Herbal Tea Co.</h1>
+            <button id="logout_button" onClick="confirmLogout()">Logout</button>
+        </header>
+
+        <div class="dashboard-container">
+            <aside class="sidebar">
+                <h2>Management</h2>
+                <ul>
+                    <li><a href="management.html">Manage Products</a></li>
+                    <li><a href="orders.html">Orders</a></li>
+                    <li><a href="accounts.html">Accounts</a></li>
+                </ul>
+            </aside>
+
+            <main class="management-content">
+                <section id="manage-orders" class="management-section">
+                    <h2>Manage Orders</h2>
+
+                    <div id="manager-order-list" class="order-list">
+                        <h3>Order List</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Email</th>
+                                    <th>Address</th>
+                                    <th>Items</th>
+                                    <th>Order Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="order-table-body"></tbody>
+                        </table>
+                    </div>
+
+                </section>
+            </main>
+        </div>
+
+        <footer>
+            <p>&copy 2025 Herbal Tea Shop. All rights reserved.</p>
+        </footer>
+
+        <script src="scripts/indexedDB.js"></script>
+        <script src="scripts/orders.js"></script>
+    </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Herbal Tea Co.</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/tea_logo2.png">
+    <link rel="manifest" href="manifest.json">
+    <script src="scripts/cart.js"></script>
+</head>
+<body>
+    <header>
+    <h1>Herbal Tea Co.</h1>
+    <button id="login_button" onClick="window.location.href='login.html'">Login</button>
+        <nav>
+            <a href="main.html">Home</a>
+            <a href="shop.html">Shop</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+        <a href="checkout.html" class="cart-icon">
+            <img src="assets/images/cart-icon2.png" alt="Shopping Cart">
+            <span id="cart-count">0</span>
+        </a>
+    </header>
+
+    <main>
+        <section class="contact-hero">
+            <h2>We'd love to hear from you!</h2>
+            <p>Have a question about our teas or your order? Reach out to us using the form below or send us an email.</p>
+        </section>
+
+        <section class="contact-container">
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <p><strong>Email:</strong><br>support.herbaltea@enmucs.com</p>
+                <p><strong>Customer Support Hours:</strong><br>Monday - Friday, 8 AM - 5 PM (MST)</p>
+                <p><strong>Social Media:</strong></p>
+                <div class="social-links">
+                    <a href="#">Facebook</a> | <a href="#">Instragram</a> | <a href="#">Twitter</a>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <h3>Send Us a Message</h3>
+                <form id="contact-form">
+                    <label for="name">Your Name: </label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Your Email: </label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Your Message: </label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+
+                    <button type="submit">Send Message</button>
+                </form>
+                <p id="contact-success" class="success=message">
+                    Thank you for reaching out! We'll get back to you shortly.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="important-links">
+                <a href="#">Terms & Conditions</a>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Privacy Policy</a>
+                <a href="#">FAQ</a>
+            </div>
+        </div>
+        <p>&copy 2025 Herbal Tea Shop. All rights reserved.</p>
+    </footer>
+
+    <script src="scripts/contact.js"></script>    
+</body>
+</html>

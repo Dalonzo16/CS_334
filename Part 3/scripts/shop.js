@@ -22,7 +22,7 @@ async function displayProducts() {
     //**********************************************/
         
         //load products 'await' key word must be used here
-        let products = await load_products();
+        let products = await loadAllFromStore('products');
 
         // Debugging
         console.log(products);

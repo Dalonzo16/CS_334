@@ -36,7 +36,31 @@ header {
     background-color: var(--color_black);
     color: var(--color_white);
     padding: 15px;
+    padding-bottom: 20px;
     text-align: center;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#login_button {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    cursor: pointer;
+}
+
+#logout_button {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 17px;
+    right: 25px;
+    cursor: pointer;
 }
 
 header nav {
@@ -131,6 +155,9 @@ button:hover {
     background: var(--color_white);
     color: var(--color_black);
     padding: 15px;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    transition: border-color 0.2 ease;
     border-radius: 10px;
     text-align: center;
     display: flex;
@@ -141,7 +168,7 @@ button:hover {
 }
 
 .product:hover {
-    border: 2px solid var(--color_light_grey);
+    border-color: var(--color_light_grey);
 }
 
 .product img {
@@ -719,25 +746,202 @@ footer {
     color: var(--color_black);
 }
 
-.management-section {
-    display: none;
+#manager-product-list {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    justify-self: center;
+    width: 75vw;
+    height: 50vw;
+    border: 2px solid var(--color_black);
+    border-radius: 10px;
+    overflow-y: auto;
 }
 
-.management-section.active {
-    display: block;
+.edit-btn {
+    margin-bottom: 5px;
 }
+
+.cancel-btn {
+    margin-bottom: 5px;
+}
+
+.order-list {
+	padding: 40px;
+	text-align: center;
+	color: var(--color_black);
+}
+
+.order-list table {
+	max-width: 100%;
+	border-collapse: collapse;
+	margin-top: 10px;
+}
+
+.order-list table th,
+.order-list table td {
+	border: 1px solid var(--color_light_grey);
+	padding: 10px;
+	text-align: left;
+}
+
+
+#manager-order-list {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	justify-self: center;
+	width: 75vw;
+	height: 50vw;
+	border: 2px solid var(--color_black);
+	border-radius: 10px;
+	overflow-y: auto;
+}
+
+.user-list {
+	padding: 40px;
+	text-align: center;
+	color: var(--color_black);
+}
+
+.user-list table {
+	max-width: 100%;
+	border-collapse: collapse;
+	margin-top: 10px;
+}
+
+.user-list table th,
+.user-list table td {
+	border: 1px solid var(--color_light_grey);
+	padding: 10px;
+	text-align: left;
+}
+
+.add-user {
+	padding: 20px;
+	width: fit-content;
+}
+
+.add-user form {
+	margin-top: 20px;
+	margin-bottom: 50px;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 20px;
+	background-color: var(--color_white);
+	padding: 20px;
+	box-sizing: border-box;
+	border: 2px solid;
+	width: fit-content;
+	transition: border-color 0.2 ease;
+	border-radius: 10px;
+	max-width: 400px;
+	text-align: left;
+	margin-left: 20px;
+}
+
+.add-user h3,
+.add-user label {
+	color: var(--color_black);
+}
+
+.add-user input,
+.add-user select {
+	width: 100%;
+	max-width: 300px;
+	padding: 10px;
+	font-size: 1.1em;
+	border: 1px solid var(--color_light_grey);
+	border-radius: 5px;
+	color: var(--color_black);
+}
+
+.add-user button {
+	width: fit-content;
+	padding: 12px 20px;
+	align-self: center;
+}
+
+#manager-user-list {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	justify-self: center;
+	width: 75vw;
+	height: 50vw;
+	border: 2px solid var(--color_black);
+	border-radius: 10px;
+	overflow-y: auto;
+}
+
 
 /* Product Table Styling */
-table {
-    width: 100%;
+.product-list table {
+    max-width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
 }
 
-table th, table td {
+.product-list table th, table td {
     border: 1px solid var(--color_light_grey);
     padding: 10px;
     text-align: left;
+}
+
+/* Set explicit column widths */
+.product-list th:nth-child(1),
+.product-list td:nth-child(1) {
+    max-width: 4vw; /* ID */
+    text-overflow: ellipsis;
+}
+
+.product-list th:nth-child(2),
+.product-list td:nth-child(2) {
+    width: fit-content;
+    max-width: 8vw; /* Product name */
+    text-overflow: ellipsis;
+    overflow-x: auto;
+}
+
+.product-list th:nth-child(3),
+.product-list td:nth-child(3) {
+    width: fit-content;
+    max-width: 10vw; /* Category */
+    text-overflow: ellipsis;
+}
+
+.product-list th:nth-child(4),
+.product-list td:nth-child(4) {
+    width: fit-content;
+    max-width: 10vw; /* Price */
+    text-overflow: ellipsis;
+}
+
+.product-list th:nth-child(5),
+.product-list td:nth-child(5) {
+    width: fit-content;
+    max-width: 25vw; /* Description */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.product-list th:nth-child(6),
+.product-list td:nth-child(6) {
+    width: fit-content;
+    max-width: 15vw; /* Image */
+}
+
+.product-list th:nth-child(7),
+.product-list td:nth-child(7) {
+    width: fit-content;
+    max-width: 10vw; /* Action buttons */
+}
+
+.product-list input[type="text"],
+.product-list input[type="number"],
+.product-list textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    font: inherit;
 }
 
 .product-list ul {
@@ -748,19 +952,31 @@ table th, table td {
 
 .product-list button {
     padding: 8px 12px;
+    margin-top: 3px;
     margin-left: 10px;
 }
 
 /* Add Product */
+
+.add-product {
+    padding: 20px;
+    width: fit-content;
+
+}
+
 .add-product form {
+    margin-top: 20px;
     margin-bottom: 50px;
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
     background-color: var(--color_white);
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px var(--color_black_transp);
+    box-sizing: border-box;
+    border: 2px solid;
+    width: fit-content;
+    transition: border-color 0.2 ease;
+    border-radius: 10px;
     max-width: 400px;
     text-align: left;
     margin-left: 20px;

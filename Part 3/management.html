@@ -1,104 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Management | Herbal Tea Co.</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="icon" type="image/x-icon" href="assets/images/tea_logo2.png">
-</head>
-<body>
-    <!-- Title and Navigation Links -->
-    <header>
-        <h1>Herbal Tea Co.</h1>
-        <nav>
-            <a href="main.html">Home</a>
-            <a href="shop.html">Shop</a>
-            <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-        <a href="checkout.html" class="cart-icon">
-            <img src="assets/images/cart-icon2.png" alt="Shopping Cart">
-            <span id="cart-count">0</span>
-        </a>
-    </header>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Management | Herbal Tea Co.</title>
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="icon" type="image/x-icon" href="assets/images/tea_logo2.png">
+    </head>
+    <body>
 
-    <div class="dashboard-container">
-    <aside class="sidebar">
-        <h2>Management</h2>
-        <ul>
-            <li><a href="#" onClick="showSection('manage-products')">Manage Products</a></li>
-            <li><a href="#" onClick="showSection('orders')">Orders</a></li>
-            <li><a href="#" onClick="showSection('customers')">Customers</a></li>
-            <li><a href="#" onClick="showSection('settings')">Settings</a></li>
-        </ul>
-    </aside>
+        <header>
+            <h1>Herbal Tea Co.</h1>
+            <button id="logout_button" onClick="confirmLogout()">Logout</button>
+        </header>
 
-    <main class="management-content">
-        <section id="manage-products" class="management-section active">
-            <h2>Manage Products</h2>
+        <div class="dashboard-container">
+        <aside class="sidebar">
+            <h2>Management</h2>
+            <ul>
+                <li><a href="management.html">Manage Products</a></li>
+                <li><a href="orders.html">Orders</a></li>
+                <li><a href="accounts.html">Accounts</a></li>
+            </ul>
+        </aside>
 
-            <div class="product-list">
-                <h3>Product List</h3>
+        <main class="management-content">
+            <section id="manage-products" class="management-section">
+                <h2>Manage Products</h2>
 
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Product</th>
-                            <th>Category</th>
-                            <th>Price</th>
-                            <th>Description</th>
-                            <th>Image</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody id="product-table-body"></tbody>
-                </table>
+                <div  id="manager-product-list" class="product-list">
+                    <h3>Product List</h3>
 
-            </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Product</th>
+                                <th>Category</th>
+                                <th>Price</th>
+                                <th>Description</th>
+                                <th>Image</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="product-table-body"></tbody>
+                    </table>
 
-            <div class="add-product">
-                <h3>Add / Edit Product</h3>
-                <form id="add-product-form">
-                    <input type="hidden" id="product-id">
-                
-                    <label for="product-name">Name</label>
-                    <input type="text" id="product-name" required>
-                
-                    <label for="product-category">Category</label>
-                    <select id="product-category" required>
-                        <option value="black">Black Tea</option>
-                        <option value="green">Green Tea</option>
-                        <option value="herbal">Herbal Tea</option>
-                        <option value="white">White Tea</option>
-                    </select>
-                
-                    <label for="product-price">Price</label>
-                    <input type="number" id="product-price" required step="0.01" min="0">
-                
-                    <label for="product-description">Description</label>
-                    <textarea id="product-description" required></textarea>
-                
-                    <label for="product-image">Image Name</label>
-                    <input type="text" id="product-image" required>
-                
-                    <button id="add-product-btn" type="submit">Add Product</button>
-                    <button id="update-product-btn" type="submit" style="display:none;">Update Product</button>
-                    <div>To clear update form please refresh the page. (This will be changed at a later date to be a button.)</div>
-                </form>
+                </div>
 
-            </div>
-
-        </section>
-
+                <div class="add-product">
+                    <h3>Add Product</h3>
+                    <form id="add-product-form">
+                        <input type="hidden" id="product-id">
+                    
+                        <label for="product-name">Name</label>
+                        <input type="text" id="product-name" required>
+                    
+                        <label for="product-category">Category</label>
+                        <select id="product-category" required>
+                            <option value="Black Tea">Black Tea</option>
+                            <option value="Green Tea">Green Tea</option>
+                            <option value="Herbal Tea">Herbal Tea</option>
+                            <option value="White Tea">White Tea</option>
+                        </select>
+                    
+                        <label for="product-price">Price</label>
+                        <input type="number" id="product-price" required step="0.01" min="0">
+                    
+                        <label for="product-description">Description</label>
+                        <textarea id="product-description" required></textarea>
+                    
+                        <label for="product-image">Image Name</label>
+                        <input type="text" id="product-image" required>
+                        <button id="add-product-btn" type="submit">Add Product</button>
+                    </form>
+                </div>
+            </main>
+        </div>
+        <footer>
+            <p>&copy 2025 Herbal Tea Shop. All rights reserved.</p>
+        </footer>
         <script src="scripts/indexedDB.js"></script>
         <script src="scripts/admin.js"></script>
-
-    </main>
-</div>
-    <footer>
-        <p>&copy 2025 Herbal Tea Shop. All rights reserved.</p>
-    </footer>
-</body>
+    </body>
 </html>
