@@ -7,10 +7,8 @@ const urlsToCache = [
   '/contact.html',
   '/checkout.html',
   '/assets/css/styles.css',
-  '/assets/images/tea_logo2.png',
-  '/scripts/script.js',
-  '/scripts/cart.js',
-  '/scripts/indexedDB.js'
+  '/assets/images/*',
+  '/scripts/*'
 ];
 
 self.addEventListener('install', event => {
