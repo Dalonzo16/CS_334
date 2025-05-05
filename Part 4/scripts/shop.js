@@ -34,7 +34,7 @@ async function displayProducts() {
                 return false;
 
             // Match selected category (or "all")
-            const matchesCategory = selectedCategory === "all" || product.category === selectedCategory.toLowerCase();
+            const matchesCategory = selectedCategory === "all" || product.category === selectedCategory;
 
             // Match selected price range
             let matchesPrice = true;
