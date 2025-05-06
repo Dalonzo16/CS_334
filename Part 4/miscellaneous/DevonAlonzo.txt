@@ -1,1 +1,1 @@
-Implemented CRUD operations for IndexedDB and implemented IndexedDB
+Wrote API endpoints for flask that corresponded with the tables we had in the sqlite database as well as assisted with setting up API and databse in pythonanywhere
