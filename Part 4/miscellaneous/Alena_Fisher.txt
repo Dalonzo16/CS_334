@@ -1,1 +1,1 @@
-Set up the functionality for the client side of the website including the cart, checkout, and contact page. 
+Wrote the execution pdf and presented the project.
