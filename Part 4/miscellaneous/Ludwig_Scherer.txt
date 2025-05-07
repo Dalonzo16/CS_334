@@ -1,1 +1,1 @@
-Worked on management side functionality
+Fixed bugs and added missing functionality from stage 3
